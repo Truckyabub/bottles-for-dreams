@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bottles for Dreams</title>
+  <style>
+    :root {
+      --sky: #9ee7ff;
+      --green: #31c96b;
+      --yellow: #ffd85a;
+      --blue: #3d7cff;
+      --pink: #ff6fb1;
+      --dark: #123;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background: linear-gradient(180deg, var(--sky), #e9fff4 55%, #f8fff0);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 56px 20px 36px;
+      text-align: center;
+      position: relative;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--yellow);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    h1 {
+      margin: 22px auto 10px;
+      max-width: 900px;
+      font-size: clamp(2.6rem, 8vw, 5.5rem);
+      line-height: 0.95;
+      color: #164c2a;
+      text-shadow: 3px 3px 0 rgba(255,255,255,0.8);
+    }
+
+    .tagline {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: clamp(1.1rem, 2.6vw, 1.45rem);
+      line-height: 1.5;
+    }
+
+    .cta-row {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--blue);
+      padding: 14px 22px;
+      border-radius: 16px;
+      font-weight: 800;
+      box-shadow: 0 8px 0 #2458c7;
+      transition: transform 0.15s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .button.secondary { background: var(--pink); box-shadow: 0 8px 0 #cc3f83; }
+
+    main {
+      width: min(1100px, 92vw);
+      margin: 0 auto 60px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.88);
+      border: 3px solid rgba(255,255,255,0.9);
+      border-radius: 28px;
+      padding: 24px;
+      min-height: 220px;
+      box-shadow: 0 15px 35px rgba(28, 92, 58, 0.15);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #185b35;
+      font-size: 1.5rem;
+    }
+
+    .card p, .card li {
+      line-height: 1.6;
+      font-size: 1.03rem;
+    }
+
+    .hero-scene {
+      margin: 38px auto 0;
+      width: min(900px, 92vw);
+      min-height: 180px;
+      border-radius: 34px;
+      background: linear-gradient(180deg, #b6f2ff 0 45%, #6bd879 45% 100%);
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 -10px 0 rgba(0,0,0,0.06), 0 18px 35px rgba(0,0,0,0.12);
+    }
+
+    .sun {
+      position: absolute;
+      right: 50px;
+      top: 24px;
+      width: 74px;
+      height: 74px;
+      background: var(--yellow);
+      border-radius: 50%;
+      box-shadow: 0 0 0 16px rgba(255,216,90,0.25);
+    }
+
+    .hill {
+      position: absolute;
+      bottom: 0;
+      width: 60%;
+      height: 88px;
+      background: #3fc86d;
+      border-radius: 100% 100% 0 0;
+    }
+
+    .hill.left { left: -10%; }
+    .hill.right { right: -12%; background: #2fb85f; }
+
+    .bottle {
+      position: absolute;
+      bottom: 42px;
+      left: 52%;
+      width: 38px;
+      height: 78px;
+      background: rgba(63,124,255,0.8);
+      border-radius: 10px 10px 14px 14px;
+      transform: rotate(-12deg);
+      border: 4px solid rgba(255,255,255,0.8);
+    }
+
+    .bottle::before {
+      content: "";
+      position: absolute;
+      top: -22px;
+      left: 9px;
+      width: 14px;
+      height: 24px;
+      background: rgba(63,124,255,0.8);
+      border: 4px solid rgba(255,255,255,0.8);
+      border-bottom: 0;
+      border-radius: 8px 8px 0 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px 46px;
+      font-weight: 700;
+      color: #24573a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="badge">Community Bottle Drive Fundraiser</span>
+    <h1>Bottles for Dreams</h1>
+    <p class="tagline">Helping collect bottles, clean up parks, and build a dream space where children, families, neighbours, puppies, laughter, and community joy can grow together.</p>
+    <div class="cta-row">
+      <a class="button" href="#how-it-works">How It Works</a>
+      <a class="button secondary" href="#get-involved">Get Involved</a>
+    </div>
+    <div class="hero-scene" aria-label="Bright community park illustration">
+      <div class="sun"></div>
+      <div class="hill left"></div>
+      <div class="hill right"></div>
+      <div class="bottle"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card-grid" id="how-it-works">
+      <article class="card">
+        <h2>Collect</h2>
+        <p>Gather refundable bottles and cans from homes, workplaces, events, and neighbours who want to help the community.</p>
+      </article>
+      <article class="card">
+        <h2>Recycle</h2>
+        <p>Turn bottles into clean parks, less waste, and real fundraiser value for a brighter shared future.</p>
+      </article>
+      <article class="card">
+        <h2>Build Dreams</h2>
+        <p>Every bag, bin, and bottle brings the dream park one step closer for children and families.</p>
+      </article>
+    </section>
+
+    <section class="card-grid" id="get-involved">
+      <article class="card">
+        <h2>Ways to Help</h2>
+        <ul>
+          <li>Save your bottles and cans.</li>
+          <li>Invite friends, family, and coworkers.</li>
+          <li>Share the campaign with your community.</li>
+          <li>Volunteer for pickup or sorting days.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Our Spirit</h2>
+        <p>Live, love, laugh, and keep bottles from flooding the parks. This fundraiser is built on kindness, teamwork, and big smiles.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    Bottles for Dreams — built by community, for community.
+  </footer>
+</body>
+</html>
