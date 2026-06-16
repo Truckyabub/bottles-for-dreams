@@ -121,29 +121,43 @@ function buildSorterBoard() {
   ];
 
   items.forEach((item) => {
-    const card = document.createElement('div');
+    const card = document.createElement('button');
     card.className = 'sort-item';
+    card.type = 'button';
     card.textContent = `${item.emoji} ${item.label}`;
     card.draggable = true;
     card.dataset.bin = item.bin;
     card.id = `sort-item-${item.id}`;
+    card.setAttribute('aria-grabbed', 'false');
     sorterItems.appendChild(card);
 
     card.addEventListener('dragstart', (event) => {
-      event.dataTransfer.setData('text/plain', item.bin);
+      event.dataTransfer.setData('text/plain', item.id);
+      event.dataTransfer.effectAllowed = 'move';
+      card.setAttribute('aria-grabbed', 'true');
+    });
+
+    card.addEventListener('dragend', () => {
+      card.setAttribute('aria-grabbed', 'false');
     });
   });
 }
 
 function setSorterBins() {
   document.querySelectorAll('.sort-bin').forEach((bin) => {
-    bin.addEventListener('dragover', (event) => event.preventDefault());
+    bin.addEventListener('dragover', (event) => {
+      event.preventDefault();
+      event.dataTransfer.dropEffect = 'move';
+    });
+
     bin.addEventListener('drop', (event) => {
       event.preventDefault();
-      const expected = event.dataTransfer.getData('text/plain');
+      const itemId = event.dataTransfer.getData('text/plain');
+      const item = document.getElementById(itemId);
       const target = event.currentTarget.dataset.bin;
-      const item = document.querySelector(".sort-item[draggable='true'][aria-hidden!='true']") || document.querySelector('.sort-item');
-      if (expected === target && item) {
+      if (!item) return;
+      const expected = item.dataset.bin;
+      if (expected === target) {
         item.remove();
         const count = parseInt(sorterCount.textContent, 10) + 1;
         sorterCount.textContent = String(count);

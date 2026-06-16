@@ -20,6 +20,7 @@ A fully static GitHub Pages site for the Ninja Park Bottle Drive Fundraiser. The
 4. Under Source, select `main` branch and `/ (root)` folder.
 5. Save and wait for GitHub Pages to generate the site.
 6. Visit the provided GitHub Pages URL.
+7. Test the homepage, games, and custom `404.html` page.
 
 ## Local preview
 
