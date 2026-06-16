@@ -10,7 +10,6 @@
   <meta property="og:description" content="Join the Ninja Park bottle drive, play three fun recycling games, and support the charity campaign." />
   <meta property="og:locale" content="en_US" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8E%86%3C/text%3E%3C/svg%3E" />
-  <link rel="preconnect" href="/" />
   <meta name="theme-color" content="#1d2a44" />
   <title>Ninja Park Bottle Drive Fundraiser</title>
   <link rel="stylesheet" href="styles.css" />
@@ -22,6 +21,7 @@
       <nav aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="#about">About</a></li>
+          <li><a href="#goal">How it works</a></li>
           <li><a href="#games">Games</a></li>
           <li><a href="#support">Support</a></li>
           <li><a href="#footer">Contact</a></li>
@@ -29,6 +29,12 @@
       </nav>
     </div>
   </header>
+
+  <noscript class="no-js-warning">
+    <div class="wrapper">
+      <p>JavaScript is required to play the interactive games. The core fundraiser content remains available without scripts.</p>
+    </div>
+  </noscript>
 
   <main>
     <section class="hero" id="top">
@@ -39,6 +45,7 @@
           <p>Support local recycling, youth outreach, and family-friendly play with a simple bottle drive campaign. No backend. No tracking. Just community impact.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#support">Support the Drive</a>
+            <a class="button button-secondary" href="#goal">See how it works</a>
             <a class="button button-secondary" href="#games">Play the Games</a>
           </div>
         </div>
@@ -153,6 +160,8 @@
             <div class="game-status">
               <p>Completed: <span id="sorter-count">0</span>/4</p>
             </div>
+            <p class="game-note">Tap a bottle item and then tap the matching bin, or drag and drop on desktop.</p>
+            <p class="sorter-selection" id="sorter-selected">Selected: None</p>
             <div class="sorter-board">
               <div class="sorter-items" id="sorter-items"></div>
               <div class="sorter-bins">

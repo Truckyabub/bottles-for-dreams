@@ -8,6 +8,7 @@ const catchRestart = document.getElementById('catch-restart');
 const sorterItems = document.getElementById('sorter-items');
 const sorterCount = document.getElementById('sorter-count');
 const sorterReset = document.getElementById('sorter-reset');
+const sorterSelectedDisplay = document.getElementById('sorter-selected');
 
 const memoryGrid = document.getElementById('memory-grid');
 const memoryMatches = document.getElementById('memory-matches');
@@ -111,6 +112,27 @@ window.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowRight') movePlayer(10);
 });
 
+let selectedSorterItem = null;
+
+function updateSorterSelection() {
+  sorterSelectedDisplay.textContent = selectedSorterItem ? `Selected: ${selectedSorterItem.textContent}` : 'Selected: None';
+}
+
+function attemptSorterPlacement(item, target) {
+  const expected = item.dataset.bin;
+  if (expected === target) {
+    item.remove();
+    selectedSorterItem = null;
+    updateSorterSelection();
+    const count = parseInt(sorterCount.textContent, 10) + 1;
+    sorterCount.textContent = String(count);
+    return true;
+  }
+  item.classList.add('sort-item-wrong');
+  setTimeout(() => item.classList.remove('sort-item-wrong'), 300);
+  return false;
+}
+
 function buildSorterBoard() {
   sorterItems.innerHTML = '';
   const items = [
@@ -130,6 +152,20 @@ function buildSorterBoard() {
     card.id = `sort-item-${item.id}`;
     card.setAttribute('aria-grabbed', 'false');
     sorterItems.appendChild(card);
+
+    card.addEventListener('click', () => {
+      if (selectedSorterItem === card) {
+        card.classList.remove('selected');
+        selectedSorterItem = null;
+      } else {
+        if (selectedSorterItem) {
+          selectedSorterItem.classList.remove('selected');
+        }
+        selectedSorterItem = card;
+        card.classList.add('selected');
+      }
+      updateSorterSelection();
+    });
 
     card.addEventListener('dragstart', (event) => {
       event.dataTransfer.setData('text/plain', item.id);
@@ -156,18 +192,20 @@ function setSorterBins() {
       const item = document.getElementById(itemId);
       const target = event.currentTarget.dataset.bin;
       if (!item) return;
-      const expected = item.dataset.bin;
-      if (expected === target) {
-        item.remove();
-        const count = parseInt(sorterCount.textContent, 10) + 1;
-        sorterCount.textContent = String(count);
-      }
+      attemptSorterPlacement(item, target);
+    });
+
+    bin.addEventListener('click', () => {
+      if (!selectedSorterItem) return;
+      attemptSorterPlacement(selectedSorterItem, bin.dataset.bin);
     });
   });
 }
 
 function resetSorterGame() {
   sorterCount.textContent = '0';
+  selectedSorterItem = null;
+  updateSorterSelection();
   buildSorterBoard();
   setSorterBins();
 }

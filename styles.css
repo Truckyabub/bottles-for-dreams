@@ -342,12 +342,63 @@ button {
   border-radius: 18px;
   text-align: center;
   user-select: none;
+  transition: transform 140ms ease, border-color 140ms ease, background-color 140ms ease;
+}
+
+.sort-item:hover,
+.sort-item:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(36, 61, 155, 0.28);
+}
+
+.sort-item.selected {
+  background: #eef4ff;
+  border-color: #243d9b;
+}
+
+.sort-item-wrong {
+  animation: shake 0.25s ease;
+  border-color: #d64545;
 }
 
 .sorter-bins {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.sort-bin {
+  border: 1px solid rgba(17, 32, 63, 0.14);
+  background: #eef4ff;
+  border-radius: 24px;
+  padding: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.sort-bin:hover,
+.sort-bin:focus-visible {
+  transform: translateY(-1px);
+  border-color: #243d9b;
+}
+
+.sort-bin.selected {
+  background: #d6e4ff;
+  border-color: #243d9b;
+}
+
+.sorter-selection {
+  margin: 0.75rem 0;
+  font-size: 0.95rem;
+  color: #243d9b;
+  font-weight: 700;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
 }
 
 .sort-bin {
