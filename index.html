@@ -1,236 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bottles for Dreams</title>
-  <style>
-    :root {
-      --sky: #9ee7ff;
-      --green: #31c96b;
-      --yellow: #ffd85a;
-      --blue: #3d7cff;
-      --pink: #ff6fb1;
-      --dark: #123;
-      --white: #ffffff;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--dark);
-      background: linear-gradient(180deg, var(--sky), #e9fff4 55%, #f8fff0);
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    header {
-      padding: 56px 20px 36px;
-      text-align: center;
-      position: relative;
-    }
-
-    .badge {
-      display: inline-block;
-      background: var(--yellow);
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    }
-
-    h1 {
-      margin: 22px auto 10px;
-      max-width: 900px;
-      font-size: clamp(2.6rem, 8vw, 5.5rem);
-      line-height: 0.95;
-      color: #164c2a;
-      text-shadow: 3px 3px 0 rgba(255,255,255,0.8);
-    }
-
-    .tagline {
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: clamp(1.1rem, 2.6vw, 1.45rem);
-      line-height: 1.5;
-    }
-
-    .cta-row {
-      margin-top: 28px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      justify-content: center;
-    }
-
-    .button {
-      display: inline-block;
-      text-decoration: none;
-      color: var(--white);
-      background: var(--blue);
-      padding: 14px 22px;
-      border-radius: 16px;
-      font-weight: 800;
-      box-shadow: 0 8px 0 #2458c7;
-      transition: transform 0.15s ease;
-    }
-
-    .button:hover { transform: translateY(-2px); }
-    .button.secondary { background: var(--pink); box-shadow: 0 8px 0 #cc3f83; }
-
-    main {
-      width: min(1100px, 92vw);
-      margin: 0 auto 60px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.88);
-      border: 3px solid rgba(255,255,255,0.9);
-      border-radius: 28px;
-      padding: 24px;
-      min-height: 220px;
-      box-shadow: 0 15px 35px rgba(28, 92, 58, 0.15);
-    }
-
-    .card h2 {
-      margin-top: 0;
-      color: #185b35;
-      font-size: 1.5rem;
-    }
-
-    .card p, .card li {
-      line-height: 1.6;
-      font-size: 1.03rem;
-    }
-
-    .hero-scene {
-      margin: 38px auto 0;
-      width: min(900px, 92vw);
-      min-height: 180px;
-      border-radius: 34px;
-      background: linear-gradient(180deg, #b6f2ff 0 45%, #6bd879 45% 100%);
-      position: relative;
-      overflow: hidden;
-      box-shadow: inset 0 -10px 0 rgba(0,0,0,0.06), 0 18px 35px rgba(0,0,0,0.12);
-    }
-
-    .sun {
-      position: absolute;
-      right: 50px;
-      top: 24px;
-      width: 74px;
-      height: 74px;
-      background: var(--yellow);
-      border-radius: 50%;
-      box-shadow: 0 0 0 16px rgba(255,216,90,0.25);
-    }
-
-    .hill {
-      position: absolute;
-      bottom: 0;
-      width: 60%;
-      height: 88px;
-      background: #3fc86d;
-      border-radius: 100% 100% 0 0;
-    }
-
-    .hill.left { left: -10%; }
-    .hill.right { right: -12%; background: #2fb85f; }
-
-    .bottle {
-      position: absolute;
-      bottom: 42px;
-      left: 52%;
-      width: 38px;
-      height: 78px;
-      background: rgba(63,124,255,0.8);
-      border-radius: 10px 10px 14px 14px;
-      transform: rotate(-12deg);
-      border: 4px solid rgba(255,255,255,0.8);
-    }
-
-    .bottle::before {
-      content: "";
-      position: absolute;
-      top: -22px;
-      left: 9px;
-      width: 14px;
-      height: 24px;
-      background: rgba(63,124,255,0.8);
-      border: 4px solid rgba(255,255,255,0.8);
-      border-bottom: 0;
-      border-radius: 8px 8px 0 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px 46px;
-      font-weight: 700;
-      color: #24573a;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ninja Park Bottle Drive Fundraiser is a static community website for a bottle collection fundraiser supporting an outdoor Ninja Park dream for children in a rural community.">
+  <meta name="theme-color" content="#2e9f57">
+  <meta property="og:title" content="Ninja Park Bottle Drive Fundraiser">
+  <meta property="og:description" content="Bottle by bottle, we build the Ninja Park dream.">
+  <meta property="og:type" content="website">
+  <title>Ninja Park Bottle Drive Fundraiser</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <span class="badge">Community Bottle Drive Fundraiser</span>
-    <h1>Bottles for Dreams</h1>
-    <p class="tagline">Helping collect bottles, clean up parks, and build a dream space where children, families, neighbours, puppies, laughter, and community joy can grow together.</p>
-    <div class="cta-row">
-      <a class="button" href="#how-it-works">How It Works</a>
-      <a class="button secondary" href="#get-involved">Get Involved</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="top-strip">
+      <span class="badge badge-soft">Static website</span>
+      <span class="badge badge-accent">Coming Soon details are clearly marked</span>
     </div>
-    <div class="hero-scene" aria-label="Bright community park illustration">
-      <div class="sun"></div>
-      <div class="hill left"></div>
-      <div class="hill right"></div>
-      <div class="bottle"></div>
-    </div>
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#home" aria-label="Ninja Park Bottle Drive Fundraiser home">
+        <span class="brand-mark" aria-hidden="true">NP</span>
+        <span class="brand-text">
+          <strong>Ninja Park Bottle Drive</strong>
+          <span>Fundraiser</span>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#vision">Vision</a>
+        <a href="#bottle-drive">Bottle Drive</a>
+        <a href="#impact">Impact</a>
+        <a href="#dream">Kids' Dream</a>
+        <a href="#games">Games</a>
+        <a href="#coming-soon">Final Stages</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
   </header>
 
-  <main>
-    <section class="card-grid" id="how-it-works">
-      <article class="card">
-        <h2>Collect</h2>
-        <p>Gather refundable bottles and cans from homes, workplaces, events, and neighbours who want to help the community.</p>
-      </article>
-      <article class="card">
-        <h2>Recycle</h2>
-        <p>Turn bottles into clean parks, less waste, and real fundraiser value for a brighter shared future.</p>
-      </article>
-      <article class="card">
-        <h2>Build Dreams</h2>
-        <p>Every bag, bin, and bottle brings the dream park one step closer for children and families.</p>
-      </article>
+  <main id="main">
+    <section class="hero section" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow">Bright, bold, family-friendly</span>
+        <h1 id="hero-title">Bottle by Bottle, We Build the Ninja Park Dream</h1>
+        <p class="hero-subtitle">Helping rural kids gain a place to play, climb, laugh, belong, and grow through community-powered bottle collection.</p>
+        <div class="hero-actions" aria-label="Quick links">
+          <a class="button button-primary" href="#vision">Learn the Vision</a>
+          <a class="button button-sun" href="#bottle-drive">How the Bottle Drive Works</a>
+          <a class="button button-outline" href="#games">Play Community Cleanup Games</a>
+        </div>
+        <div class="hero-vision-card">
+          <span class="badge badge-accent">Prominent vision statement</span>
+          <p>
+            Our vision is to turn everyday bottles into extraordinary possibilities. Through community bottle collection in Fort McMurray, we are helping create an outdoor Ninja Park wonderland for children in a smaller rural community where recreation funding is limited and youth need more places to play, grow, belong, and dream.
+          </p>
+        </div>
+        <div class="hero-points" aria-label="Key ideas">
+          <span class="pill">Outdoor adventure</span>
+          <span class="pill">Community cleanup</span>
+          <span class="pill">Rural youth support</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="sky-glow"></div>
+        <div class="sun"></div>
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+        <div class="tree tree-left"></div>
+        <div class="tree tree-right"></div>
+        <div class="hill hill-back"></div>
+        <div class="hill hill-front"></div>
+        <div class="obstacle obstacle-beam"></div>
+        <div class="obstacle obstacle-ropes"></div>
+        <div class="obstacle obstacle-bars"></div>
+        <div class="bottle bottle-one"></div>
+        <div class="bottle bottle-two"></div>
+        <div class="bottle bottle-three"></div>
+        <div class="kid kid-one"></div>
+        <div class="kid kid-two"></div>
+        <div class="sparkle sparkle-one"></div>
+        <div class="sparkle sparkle-two"></div>
+      </div>
     </section>
 
-    <section class="card-grid" id="get-involved">
-      <article class="card">
-        <h2>Ways to Help</h2>
-        <ul>
-          <li>Save your bottles and cans.</li>
-          <li>Invite friends, family, and coworkers.</li>
-          <li>Share the campaign with your community.</li>
-          <li>Volunteer for pickup or sorting days.</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h2>Our Spirit</h2>
-        <p>Live, love, laugh, and keep bottles from flooding the parks. This fundraiser is built on kindness, teamwork, and big smiles.</p>
-      </article>
+    <section class="section section-split" id="vision" aria-labelledby="vision-title">
+      <div class="content-block">
+        <span class="eyebrow">Vision</span>
+        <h2 id="vision-title">Our vision is bigger than a bottle drive.</h2>
+        <p class="lead">
+          “Our vision is to turn everyday bottles into extraordinary possibilities. Through community bottle collection in Fort McMurray, we are helping create an outdoor Ninja Park wonderland for children in a smaller rural community where recreation funding is limited and youth need more places to play, grow, belong, and dream. This park will be more than equipment — it will be a place of adventure, confidence, friendship, laughter, fresh air, and community pride. Every bottle collected helps clean up our surroundings, lift up young hearts, and bring one more miracle closer to reality.”
+        </p>
+      </div>
+      <aside class="quote-card">
+        <span class="badge badge-accent">Community-driven</span>
+        <p>
+          Every recycled bottle helps turn cleanup into something beautiful, practical, and full of hope.
+        </p>
+      </aside>
+    </section>
+
+    <section class="section" id="bottle-drive" aria-labelledby="drive-title">
+      <div class="section-heading">
+        <span class="eyebrow">Bottle Drive</span>
+        <h2 id="drive-title">How the fundraiser works</h2>
+      </div>
+      <div class="feature-grid four">
+        <article class="feature-card">
+          <h3>Bottles are collected in Fort McMurray.</h3>
+          <p>Community members save recyclable bottles that can be cleaned up and returned together.</p>
+        </article>
+        <article class="feature-card">
+          <h3>The goal supports children in a smaller rural community.</h3>
+          <p>The fundraiser is built to help bring a safe, active outdoor Ninja Park closer to reality.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Every bottle helps two ways.</h3>
+          <p>It keeps recyclables out of parks, roadsides, and shared spaces while building toward something meaningful.</p>
+        </article>
+        <article class="feature-card">
+          <h3>It is about belonging, adventure, and opportunity.</h3>
+          <p>The project is designed to help kids feel active, included, and excited about what their community can create.</p>
+        </article>
+      </div>
+
+      <div class="progress-panel">
+        <div>
+          <span class="badge badge-soft">Placeholder only</span>
+          <h3>Fundraising Progress — Coming Soon</h3>
+          <p>No dollar amount is shown yet. The progress display will open once the fundraiser details are ready.</p>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <span class="progress-fill"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="impact" aria-labelledby="impact-title">
+      <div class="section-heading">
+        <span class="eyebrow">Community Impact</span>
+        <h2 id="impact-title">Why this matters for families and neighbours</h2>
+      </div>
+      <div class="feature-grid five">
+        <article class="feature-card impact-card">
+          <h3>Cleaner Communities</h3>
+          <p>Bottle collection keeps recyclables out of parks, roadsides, and shared spaces.</p>
+        </article>
+        <article class="feature-card impact-card">
+          <h3>Outdoor Adventure</h3>
+          <p>The Ninja Park gives kids a place to climb, balance, run, imagine, and challenge themselves.</p>
+        </article>
+        <article class="feature-card impact-card">
+          <h3>Belonging</h3>
+          <p>A shared park creates a gathering place where families, children, and neighbours feel connected.</p>
+        </article>
+        <article class="feature-card impact-card">
+          <h3>Rural Youth Support</h3>
+          <p>Smaller communities often do not have the same access to recreation luxuries available in larger cities.</p>
+        </article>
+        <article class="feature-card impact-card">
+          <h3>Miracles Through Action</h3>
+          <p>Small actions, repeated together, can create something life-changing for children.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-split" id="dream" aria-labelledby="dream-title">
+      <div class="content-block">
+        <span class="eyebrow">Kids' Ninja Park Dream</span>
+        <h2 id="dream-title">A place where confidence can grow in the fresh air</h2>
+        <p class="lead">
+          The dream park is imagined as a welcoming outdoor wonderland with playful obstacle-course energy, bright trees, open sky, and safe spaces for children to move, explore, and feel proud of what they can do.
+        </p>
+        <div class="dream-tags">
+          <span class="tag">Balance beams</span>
+          <span class="tag">Rope climbs</span>
+          <span class="tag">Monkey bars</span>
+          <span class="tag">Ninja steps</span>
+          <span class="tag">Treehouse lookout</span>
+        </div>
+      </div>
+      <aside class="dream-illustration" aria-hidden="true">
+        <div class="tree tree-mini-left"></div>
+        <div class="tree tree-mini-right"></div>
+        <div class="platform platform-one"></div>
+        <div class="platform platform-two"></div>
+        <div class="platform platform-three"></div>
+        <div class="rope"></div>
+        <div class="rope rope-two"></div>
+        <div class="path"></div>
+        <div class="badge-card">Dream Park</div>
+      </aside>
+    </section>
+
+    <section class="section games-section" id="games" aria-labelledby="games-title">
+      <div class="section-heading">
+        <span class="eyebrow">Interactive Games</span>
+        <h2 id="games-title">Play Your Part</h2>
+        <p>These mini-games are lightweight, local, and powered by simple vanilla JavaScript.</p>
+      </div>
+
+      <div class="games-grid">
+        <article class="game-card" id="cleanup-game" aria-labelledby="cleanup-title">
+          <div class="game-header">
+            <div>
+              <span class="game-number">1</span>
+              <h3 id="cleanup-title">Bottle Cleanup Dash</h3>
+            </div>
+            <button class="button button-outline button-sm" type="button" data-action="reset-cleanup">Reset</button>
+          </div>
+          <p>Click or tap the bottles before they disappear. After enough bottles, the community cleanup message appears.</p>
+          <div class="game-stats" aria-live="polite">
+            <span>Score: <strong data-cleanup-score>0</strong></span>
+            <span>Collected goal: <strong>10</strong></span>
+          </div>
+          <div class="cleanup-playfield" data-cleanup-playfield aria-label="Bottle cleanup playfield"></div>
+          <p class="game-message" data-cleanup-message aria-live="polite"></p>
+        </article>
+
+        <article class="game-card" id="build-game" aria-labelledby="build-title">
+          <div class="game-header">
+            <div>
+              <span class="game-number">2</span>
+              <h3 id="build-title">Build the Ninja Park</h3>
+            </div>
+            <button class="button button-outline button-sm" type="button" data-action="reset-build">Reset</button>
+          </div>
+          <p>Choose park pieces to assemble the dream. Each piece appears in the illustrated park area.</p>
+          <div class="build-buttons" role="group" aria-label="Park building controls">
+            <button class="button button-sun button-sm" type="button" data-piece="balance-beam">Balance Beam</button>
+            <button class="button button-sun button-sm" type="button" data-piece="rope-climb">Rope Climb</button>
+            <button class="button button-sun button-sm" type="button" data-piece="monkey-bars">Monkey Bars</button>
+            <button class="button button-sun button-sm" type="button" data-piece="ninja-steps">Ninja Steps</button>
+            <button class="button button-sun button-sm" type="button" data-piece="treehouse-lookout">Treehouse Lookout</button>
+          </div>
+          <div class="build-stage" data-build-stage aria-label="Ninja Park build stage"></div>
+          <p class="game-message" data-build-message aria-live="polite"></p>
+        </article>
+
+        <article class="game-card" id="meter-game" aria-labelledby="meter-title">
+          <div class="game-header">
+            <div>
+              <span class="game-number">3</span>
+              <h3 id="meter-title">Miracle Meter</h3>
+            </div>
+            <button class="button button-outline button-sm" type="button" data-action="reset-meter">Reset</button>
+          </div>
+          <p>Click one bottle at a time and watch the miracle meter fill with hope.</p>
+          <div class="meter">
+            <div class="meter-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Miracle meter progress">
+              <div class="meter-fill" data-meter-fill></div>
+            </div>
+            <div class="meter-row">
+              <button class="button button-primary button-sm" type="button" data-action="add-bottle">Add One Bottle</button>
+              <strong data-meter-count>0</strong>
+            </div>
+          </div>
+          <p class="game-message" data-meter-message aria-live="polite"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section coming-soon" id="coming-soon" aria-labelledby="soon-title">
+      <div class="section-split">
+        <div class="content-block">
+          <span class="eyebrow">Final Stages Coming Soon</span>
+          <h2 id="soon-title">Final Stages Coming Soon</h2>
+          <p class="lead">
+            As planning, fundraising, approvals, and community support continue, this page will be updated with milestones, photos, progress notes, and ways to help. The Ninja Park vision is not finished yet - it is just beginning.
+          </p>
+        </div>
+        <aside class="gate-scene" aria-hidden="true">
+          <div class="gate"></div>
+          <div class="gate-post gate-post-left"></div>
+          <div class="gate-post gate-post-right"></div>
+          <div class="tree tree-gate-left"></div>
+          <div class="tree tree-gate-right"></div>
+          <div class="obstacle obstacle-silhouette obstacle-one"></div>
+          <div class="obstacle obstacle-silhouette obstacle-two"></div>
+          <div class="coming-tag">Coming Soon</div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-split contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="content-block">
+        <span class="eyebrow">Contact / Coming Soon</span>
+        <h2 id="contact-title">Contact and official bottle drop-off details are coming soon.</h2>
+        <p class="lead">For privacy and safety, this website currently does not collect personal information.</p>
+        <p>No real forms, payment processors, tracking scripts, cookies, or unsafe third-party embeds are included.</p>
+      </div>
+      <aside class="contact-card">
+        <span class="badge badge-accent">Safe placeholder</span>
+        <p>When the organizer is ready, this area can be updated with approved public details only.</p>
+      </aside>
     </section>
   </main>
 
-  <footer>
-    Bottles for Dreams — built by community, for community.
+  <footer class="site-footer">
+    <p>Ninja Park Bottle Drive Fundraiser is a static website ready for GitHub Pages.</p>
+    <p>No personal information is collected on this site.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
