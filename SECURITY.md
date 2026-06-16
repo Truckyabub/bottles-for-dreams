@@ -1,25 +1,20 @@
 # Security Policy
 
-## Project Scope
+## Supported security issue types
 
-Ninja Park Bottle Drive Fundraiser is a static website intended for GitHub Pages.
+- Vulnerabilities in static site code
+- Privacy concerns arising from page content
+- Broken or unsafe links
+- Accessibility issues affecting navigation or content
 
-## Security and Privacy Commitments
+## Reporting a vulnerability
 
-- No backend services
-- No database
-- No authentication system
-- No tracking scripts
-- No cookies are set by this site
-- No analytics tools are included
-- No payment processor is included
-- No personal information is collected by the current site
-- No unsafe third-party embeds are used
+If you discover a security issue, please open an issue in this repository with a clear description of the problem and reproducible steps.
 
-## Future Changes
+## Privacy
 
-If contact forms, donations, or other data collection features are added later, they should be reviewed carefully before launch and should collect only the minimum information needed.
+This site is intentionally built without analytics or tracking. No personal data is collected, stored, or transmitted by this repository.
 
-## Reporting Concerns
+## Responsible disclosure
 
-If a security or privacy issue is discovered, keep the site private until the concern is reviewed and resolved.
+Please allow maintainers time to respond before publicly disclosing any vulnerability.

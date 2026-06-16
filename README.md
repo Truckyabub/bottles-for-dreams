@@ -1,53 +1,42 @@
 # Ninja Park Bottle Drive Fundraiser
 
-## Description
+A fully static GitHub Pages site for the Ninja Park Bottle Drive Fundraiser. The site is built for privacy and mobile responsiveness, with no backend, no analytics, and no tracking.
 
-A static GitHub Pages website for a community bottle drive fundraiser supporting the dream of building an outdoor Ninja Park for children in a rural community.
+## What is included
 
-## How to Run Locally
+- `index.html` — single-page responsive website
+- `styles.css` — accessible styling and layout
+- `script.js` — three built-in games: Bottle Catch, Recycle Sorter, Memory Match
+- `SECURITY.md` — vulnerability reporting and privacy policy notes
+- `LAUNCH_CHECKLIST.md` — publish and verification checklist
+- `404.html` — custom GitHub Pages not found page
+- `.nojekyll` — disables Jekyll processing on GitHub Pages
 
-Open `index.html` directly in a browser, or serve the folder with any simple static file server.
+## Publish instructions
 
-Example:
+1. Confirm the repository uses the `main` branch.
+2. Confirm the site files are at the repository root (`/`).
+3. In GitHub, open the repository `Settings` > `Pages`.
+4. Under Source, select `main` branch and `/ (root)` folder.
+5. Save and wait for GitHub Pages to generate the site.
+6. Visit the provided GitHub Pages URL.
+
+## Local preview
+
+Open `index.html` in a browser or use a local HTTP server if needed.
+
+### Example local preview command
 
 ```bash
-python3 -m http.server
+cd /Users/mufasa/Documents/GitHub/bottles-for-dreams
+python3 -m http.server 8000
 ```
 
-Then open the local address shown in the terminal.
+Then visit `http://localhost:8000`.
 
-## How to Publish with GitHub Pages
+## Privacy and design notes
 
-1. Push these files to a GitHub repository.
-2. In GitHub repo settings, enable GitHub Pages from the branch you want to publish.
-3. Choose the root folder as the publishing source.
-4. Wait for the Pages URL to finish building, then share that URL when you are ready.
-
-## Files Included
-
-- `index.html`
-- `styles.css`
-- `script.js`
-- `README.md`
-- `SECURITY.md`
-- `LAUNCH_CHECKLIST.md`
-
-## Privacy Note
-
-This website is static only.
-
-- No backend
-- No database
-- No analytics
-- No cookies
-- No tracking scripts
-- No payment processor
-- No private personal information collected
-
-## Coming Soon Features
-
-- Fundraising progress details
-- Official bottle drop-off details
-- Approved organizer contact information
-- Final milestone photos and updates
-- Additional public help instructions after review
+- No external scripts, fonts, or analytics are used.
+- No forms send data to a backend.
+- All game logic runs client-side in the browser.
+- Section links and anchors are verified in the static page.

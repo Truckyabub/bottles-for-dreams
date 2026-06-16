@@ -1,286 +1,242 @@
-const navToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector("#nav-links");
+const catchArena = document.getElementById('catch-arena');
+const catchScore = document.getElementById('catch-score');
+const catchLevel = document.getElementById('catch-level');
+const catchLeft = document.getElementById('catch-left');
+const catchRight = document.getElementById('catch-right');
+const catchRestart = document.getElementById('catch-restart');
 
-if (navToggle && navLinks) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-  });
+const sorterItems = document.getElementById('sorter-items');
+const sorterCount = document.getElementById('sorter-count');
+const sorterReset = document.getElementById('sorter-reset');
 
-  navLinks.addEventListener("click", (event) => {
-    if (event.target.matches("a")) {
-      navLinks.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-    }
-  });
-}
+const memoryGrid = document.getElementById('memory-grid');
+const memoryMatches = document.getElementById('memory-matches');
+const memoryReset = document.getElementById('memory-reset');
 
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const targetId = link.getAttribute("href");
-    if (!targetId || targetId === "#") return;
-
-    const target = document.querySelector(targetId);
-    if (!target) return;
-
-    event.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-    history.pushState(null, "", targetId);
-  });
-});
-
-const cleanupState = {
+let catchState = {
+  playerX: 50,
   score: 0,
-  goal: 10,
-  spawnTimer: null,
-  playfield: document.querySelector("[data-cleanup-playfield]"),
-  scoreNode: document.querySelector("[data-cleanup-score]"),
-  messageNode: document.querySelector("[data-cleanup-message]"),
-  resetButton: document.querySelector('[data-action="reset-cleanup"]'),
-  activeBottles: new Set(),
+  level: 1,
+  speed: 1.5,
+  objects: [],
+  running: false,
 };
 
-const buildState = {
-  added: new Set(),
-  stage: document.querySelector("[data-build-stage]"),
-  messageNode: document.querySelector("[data-build-message]"),
-  resetButton: document.querySelector('[data-action="reset-build"]'),
-  pieceButtons: Array.from(document.querySelectorAll("[data-piece]")),
-};
-
-const meterState = {
-  count: 0,
-  max: 25,
-  trackNode: document.querySelector(".meter-track"),
-  fillNode: document.querySelector("[data-meter-fill]"),
-  countNode: document.querySelector("[data-meter-count]"),
-  messageNode: document.querySelector("[data-meter-message]"),
-  resetButton: document.querySelector('[data-action="reset-meter"]'),
-  addButton: document.querySelector('[data-action="add-bottle"]'),
-  milestoneIndex: 0,
-};
-
-const cleanupVictoryMessage = "Great job! You helped clean the community and moved the Ninja Park dream forward.";
-const buildVictoryMessage = "The Ninja Park is coming to life - one community effort at a time!";
-const meterMessages = [
-  "A cleaner path begins.",
-  "A playground dream is growing.",
-  "The trees are greener.",
-  "The kids are climbing higher.",
-  "The miracle is almost here.",
-];
-
-function setText(node, text) {
-  if (node) node.textContent = text;
-}
-
-function clearChildren(node) {
-  if (!node) return;
-  node.replaceChildren();
-}
-
-function randomBetween(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-function createCleanupBottle() {
-  if (!cleanupState.playfield) return null;
-
-  const bottle = document.createElement("button");
-  bottle.type = "button";
-  bottle.className = "cleanup-bottle";
-  bottle.setAttribute("aria-label", "Collect this bottle");
-
-  const fieldRect = cleanupState.playfield.getBoundingClientRect();
-  const bottleWidth = 30;
-  const bottleHeight = 78;
-  const maxLeft = Math.max(20, fieldRect.width - bottleWidth - 20);
-  const maxTop = Math.max(20, fieldRect.height - bottleHeight - 32);
-
-  bottle.style.left = `${randomBetween(12, maxLeft)}px`;
-  bottle.style.top = `${randomBetween(16, maxTop)}px`;
-  bottle.style.transform = `rotate(${randomBetween(-18, 18)}deg)`;
-
-  bottle.addEventListener("click", () => collectBottle(bottle));
-
-  cleanupState.activeBottles.add(bottle);
-  cleanupState.playfield.appendChild(bottle);
-  return bottle;
-}
-
-function collectBottle(bottle) {
-  if (!bottle || bottle.classList.contains("is-collected")) return;
-
-  bottle.classList.add("is-collected");
-  cleanupState.score += 1;
-  cleanupState.activeBottles.delete(bottle);
-  setText(cleanupState.scoreNode, String(cleanupState.score));
-
-  window.setTimeout(() => bottle.remove(), 220);
-
-  if (cleanupState.score >= cleanupState.goal) {
-    setText(cleanupState.messageNode, cleanupVictoryMessage);
-    stopCleanupSpawning();
+function createCatchObjects() {
+  catchState.objects = [];
+  const count = 4;
+  for (let i = 0; i < count; i += 1) {
+    catchState.objects.push({ x: 10 + i * 20, y: -40 * i, speed: 1 + i * 0.5 });
   }
 }
 
-function startCleanupSpawning() {
-  stopCleanupSpawning();
-  if (!cleanupState.playfield) return;
-
-  cleanupState.spawnTimer = window.setInterval(() => {
-    if (cleanupState.score >= cleanupState.goal) {
-      stopCleanupSpawning();
-      return;
+function renderCatchGame() {
+  catchArena.innerHTML = '';
+  catchState.objects.forEach((obj, index) => {
+    const bottle = document.createElement('div');
+    bottle.className = 'catch-object';
+    bottle.style.left = `${obj.x}%`;
+    bottle.style.top = `${obj.y}px`;
+    bottle.textContent = '🍾';
+    bottle.setAttribute('aria-hidden', 'true');
+    catchArena.appendChild(bottle);
+    if (index === 0) {
+      const player = document.createElement('div');
+      player.className = 'catch-player';
+      player.style.left = `${catchState.playerX}%`;
+      player.textContent = '🥷';
+      player.setAttribute('aria-hidden', 'true');
+      catchArena.appendChild(player);
     }
+  });
+}
 
-    if (cleanupState.activeBottles.size < 7) {
-      createCleanupBottle();
+function updateCatchGame() {
+  if (!catchState.running) return;
+  const arenaHeight = catchArena.clientHeight;
+  catchState.objects.forEach((obj) => {
+    obj.y += obj.speed * catchState.speed;
+    if (obj.y > arenaHeight - 60) {
+      const caught = Math.abs(obj.x - catchState.playerX) < 12;
+      if (caught) {
+        catchState.score += 10;
+        if (catchState.score % 50 === 0) {
+          catchState.level += 1;
+          catchState.speed += 0.3;
+        }
+      }
+      obj.y = -40;
+      obj.x = Math.random() * 84 + 8;
+      obj.speed = 1 + Math.random() * 1.4;
     }
-  }, 850);
+  });
+  catchScore.textContent = catchState.score;
+  catchLevel.textContent = catchState.level;
+  renderCatchGame();
+  requestAnimationFrame(updateCatchGame);
 }
 
-function stopCleanupSpawning() {
-  if (cleanupState.spawnTimer) {
-    window.clearInterval(cleanupState.spawnTimer);
-    cleanupState.spawnTimer = null;
-  }
+function startCatchGame() {
+  if (catchState.running) return;
+  catchState.running = true;
+  renderCatchGame();
+  requestAnimationFrame(updateCatchGame);
 }
 
-function resetCleanupGame() {
-  cleanupState.score = 0;
-  setText(cleanupState.scoreNode, "0");
-  setText(cleanupState.messageNode, "");
-
-  cleanupState.activeBottles.forEach((bottle) => bottle.remove());
-  cleanupState.activeBottles.clear();
-
-  clearChildren(cleanupState.playfield);
-
-  for (let i = 0; i < 6; i += 1) {
-    createCleanupBottle();
-  }
-
-  startCleanupSpawning();
-}
-
-function pieceClass(pieceName) {
-  return `piece-${pieceName}`;
-}
-
-function renderBuildPiece(pieceName) {
-  if (!buildState.stage || buildState.added.has(pieceName)) return;
-
-  const piece = document.createElement("div");
-  piece.className = `build-piece ${pieceClass(pieceName)}`;
-  piece.setAttribute("aria-hidden", "true");
-  piece.dataset.piece = pieceName;
-
-  const labels = {
-    "balance-beam": "Balance Beam",
-    "rope-climb": "Rope Climb",
-    "monkey-bars": "Monkey Bars",
-    "ninja-steps": "Ninja Steps",
-    "treehouse-lookout": "Treehouse Lookout",
+function resetCatchGame() {
+  catchState = {
+    playerX: 50,
+    score: 0,
+    level: 1,
+    speed: 1.5,
+    objects: [],
+    running: true,
   };
-
-  piece.textContent = labels[pieceName] || pieceName;
-  buildState.stage.appendChild(piece);
-  buildState.added.add(pieceName);
-
-  if (buildState.added.size === buildState.pieceButtons.length) {
-    setText(buildState.messageNode, buildVictoryMessage);
-  }
+  createCatchObjects();
+  catchScore.textContent = '0';
+  catchLevel.textContent = '1';
+  renderCatchGame();
 }
 
-function resetBuildGame() {
-  buildState.added.clear();
-  setText(buildState.messageNode, "");
-  clearChildren(buildState.stage);
-  buildState.pieceButtons.forEach((button) => {
-    button.disabled = false;
-  });
-
-  const note = document.createElement("p");
-  note.className = "ghost-note";
-  note.textContent = "Choose pieces to build the park.";
-  buildState.stage.appendChild(note);
+function movePlayer(direction) {
+  catchState.playerX = Math.min(92, Math.max(8, catchState.playerX + direction));
+  renderCatchGame();
 }
 
-function renderMeter() {
-  const percentage = Math.min(100, Math.round((meterState.count / meterState.max) * 100));
-  if (meterState.fillNode) meterState.fillNode.style.width = `${percentage}%`;
-  if (meterState.countNode) meterState.countNode.textContent = String(meterState.count);
-  if (meterState.trackNode) meterState.trackNode.setAttribute("aria-valuenow", String(percentage));
-
-  if (meterState.count > 0) {
-    const milestone = Math.min(meterMessages.length - 1, Math.floor((meterState.count - 1) / 5));
-    if (milestone >= meterState.milestoneIndex) {
-      meterState.milestoneIndex = milestone + 1;
-      setText(meterState.messageNode, meterMessages[milestone]);
-    }
-  }
-
-  if (meterState.count >= meterState.max) {
-    setText(meterState.messageNode, meterMessages[meterMessages.length - 1]);
-    if (meterState.addButton) meterState.addButton.disabled = true;
-  } else if (meterState.count === 0) {
-    setText(meterState.messageNode, "");
-  } else if (meterState.milestoneIndex === 0) {
-    setText(meterState.messageNode, meterMessages[0]);
-  }
-}
-
-function addBottleToMeter() {
-  if (meterState.count >= meterState.max) return;
-
-  meterState.count += 1;
-  renderMeter();
-}
-
-function resetMeterGame() {
-  meterState.count = 0;
-  meterState.milestoneIndex = 0;
-  setText(meterState.messageNode, "");
-  if (meterState.addButton) meterState.addButton.disabled = false;
-  renderMeter();
-}
-
-if (cleanupState.resetButton) {
-  cleanupState.resetButton.addEventListener("click", resetCleanupGame);
-}
-
-if (buildState.resetButton) {
-  buildState.resetButton.addEventListener("click", resetBuildGame);
-}
-
-buildState.pieceButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const pieceName = button.dataset.piece;
-    renderBuildPiece(pieceName);
-    button.disabled = true;
-  });
+catchLeft.addEventListener('click', () => movePlayer(-10));
+catchRight.addEventListener('click', () => movePlayer(10));
+catchRestart.addEventListener('click', resetCatchGame);
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') movePlayer(-10);
+  if (event.key === 'ArrowRight') movePlayer(10);
 });
 
-if (meterState.addButton) {
-  meterState.addButton.addEventListener("click", addBottleToMeter);
+function buildSorterBoard() {
+  sorterItems.innerHTML = '';
+  const items = [
+    { id: 'plastic', label: 'Plastic Bottle', emoji: '🥤', bin: 'plastic' },
+    { id: 'glass', label: 'Glass Bottle', emoji: '🍾', bin: 'glass' },
+    { id: 'metal', label: 'Soda Can', emoji: '🥫', bin: 'metal' },
+    { id: 'paper', label: 'Paper Cup', emoji: '🥛', bin: 'paper' },
+  ];
+
+  items.forEach((item) => {
+    const card = document.createElement('div');
+    card.className = 'sort-item';
+    card.textContent = `${item.emoji} ${item.label}`;
+    card.draggable = true;
+    card.dataset.bin = item.bin;
+    card.id = `sort-item-${item.id}`;
+    sorterItems.appendChild(card);
+
+    card.addEventListener('dragstart', (event) => {
+      event.dataTransfer.setData('text/plain', item.bin);
+    });
+  });
 }
 
-if (meterState.resetButton) {
-  meterState.resetButton.addEventListener("click", resetMeterGame);
+function setSorterBins() {
+  document.querySelectorAll('.sort-bin').forEach((bin) => {
+    bin.addEventListener('dragover', (event) => event.preventDefault());
+    bin.addEventListener('drop', (event) => {
+      event.preventDefault();
+      const expected = event.dataTransfer.getData('text/plain');
+      const target = event.currentTarget.dataset.bin;
+      const item = document.querySelector(".sort-item[draggable='true'][aria-hidden!='true']") || document.querySelector('.sort-item');
+      if (expected === target && item) {
+        item.remove();
+        const count = parseInt(sorterCount.textContent, 10) + 1;
+        sorterCount.textContent = String(count);
+      }
+    });
+  });
 }
 
-window.addEventListener("resize", () => {
-  if (!cleanupState.playfield || cleanupState.score >= cleanupState.goal) return;
+function resetSorterGame() {
+  sorterCount.textContent = '0';
+  buildSorterBoard();
+  setSorterBins();
+}
 
-  cleanupState.activeBottles.forEach((bottle) => bottle.remove());
-  cleanupState.activeBottles.clear();
-  clearChildren(cleanupState.playfield);
-  for (let i = 0; i < 4; i += 1) {
-    createCleanupBottle();
+sorterReset.addEventListener('click', resetSorterGame);
+
+const memoryCards = [
+  '🍾', '🍾',
+  '🥤', '🥤',
+  '🥫', '🥫',
+];
+let memoryState = {
+  first: null,
+  lock: false,
+  matches: 0,
+};
+
+function shuffle(array) {
+  const result = array.slice();
+  for (let i = result.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
   }
-});
+  return result;
+}
 
-resetBuildGame();
-resetMeterGame();
-resetCleanupGame();
+function buildMemoryBoard() {
+  memoryGrid.innerHTML = '';
+  const cards = shuffle(memoryCards);
+  cards.forEach((symbol, index) => {
+    const button = document.createElement('button');
+    button.className = 'memory-card';
+    button.type = 'button';
+    button.dataset.symbol = symbol;
+    button.dataset.index = String(index);
+    button.textContent = '';
+    button.addEventListener('click', () => revealMemoryCard(button));
+    memoryGrid.appendChild(button);
+  });
+}
+
+function revealMemoryCard(card) {
+  if (memoryState.lock || card.classList.contains('flipped') || card.classList.contains('matched')) {
+    return;
+  }
+  card.classList.add('flipped');
+  card.textContent = card.dataset.symbol;
+
+  if (!memoryState.first) {
+    memoryState.first = card;
+    return;
+  }
+
+  const second = card;
+  if (memoryState.first.dataset.symbol === second.dataset.symbol) {
+    memoryState.first.classList.add('matched');
+    second.classList.add('matched');
+    memoryState.matches += 1;
+    memoryMatches.textContent = String(memoryState.matches);
+    memoryState.first = null;
+    return;
+  }
+
+  memoryState.lock = true;
+  setTimeout(() => {
+    memoryState.first.classList.remove('flipped');
+    memoryState.first.textContent = '';
+    second.classList.remove('flipped');
+    second.textContent = '';
+    memoryState.first = null;
+    memoryState.lock = false;
+  }, 800);
+}
+
+function resetMemoryGame() {
+  memoryState = { first: null, lock: false, matches: 0 };
+  memoryMatches.textContent = '0';
+  buildMemoryBoard();
+}
+
+memoryReset.addEventListener('click', resetMemoryGame);
+
+resetCatchGame();
+resetSorterGame();
+resetMemoryGame();
+startCatchGame();
