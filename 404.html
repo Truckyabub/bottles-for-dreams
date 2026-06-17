@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
   <header class="site-header">
-    <div class="wrapper header-inner">
+    <div class="container header-inner">
       <a class="brand" href="/">Ninja Park</a>
       <nav aria-label="Main navigation">
         <ul class="nav-list">
@@ -22,19 +23,17 @@
       </nav>
     </div>
   </header>
-  <main class="section">
-    <div class="wrapper">
-      <article class="game-card">
-        <h1>404 — Page not found</h1>
-        <p>The Ninja Park Bottle Drive page could not be found. Use the navigation above to return to the homepage.</p>
-        <p>If you reached this page from an outdated link, hit the home button below.</p>
-        <a class="button button-primary" href="/">Go back home</a>
-      </article>
+  <main id="main" class="section">
+    <div class="container card-card" style="max-width: 720px; margin: 0 auto; text-align: center; padding: 3rem 2rem;">
+      <span class="section-label">Page not found</span>
+      <h1>404 — Page missing</h1>
+      <p>The Ninja Park Bottle Drive page could not be found. Use the links above to return to the homepage.</p>
+      <a class="button button-primary" href="/">Go back home</a>
     </div>
   </main>
   <footer class="site-footer">
-    <div class="wrapper footer-grid">
-      <p>This site is served as a static GitHub Pages site with no analytics or backend.</p>
+    <div class="container footer-inner">
+      <p class="footer-copy">This site is served as a static GitHub Pages project with no analytics or backend.</p>
     </div>
   </footer>
 </body>

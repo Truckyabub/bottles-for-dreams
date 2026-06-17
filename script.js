@@ -1,7 +1,7 @@
 const progressData = {
   goal: '$[insert goal]',
   raised: '$[insert amount]',
-  milestone: '$[insert milestone]'
+  milestone: '[insert milestone]'
 };
 
 function updateProgressLabels() {

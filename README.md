@@ -4,40 +4,52 @@ A polished website for the Ninja Park bottle drive & community fundraiser.
 
 ## Purpose
 
-This site is built for a Ninja Park community fundraiser that welcomes bottle donations at Sunset Shores and private support through e-transfer, cash donations, sponsorships, materials, volunteer help, and community sharing.
+This site supports a local community fundraiser and bottle drive at Sunset Shores. It explains bottle collection, private support options, transparency, and contact details while keeping the project honest and safe.
 
-## Files
+## Files included
 
-- `index.html` — landing page content and Ninja Park fundraiser sections
-- `styles.css` — responsive design, bright color palette, and friendly layout
-- `script.js` — small enhancements for progress labels and link security
-- `DONATION_TRANSPARENCY.md` — donation tracking and transparency guidance
-- `PRIVACY_AND_SECURITY.md` — privacy, safety, and donor guidance
-- `LAUNCH_CHECKLIST.md` — pre-launch review checklist
-- `SECURITY.md` — privacy and security assurance statements
+- `index.html` — homepage with mission, bottle bin details, private support, transparency, vision, disclaimer, and contact sections
+- `styles.css` — responsive, accessible styling with sunset and forest-inspired colors
+- `script.js` — lightweight script for progress placeholders and secure external links
+- `DONATION_TRANSPARENCY.md` — transparency and funds usage guidance
+- `PRIVACY_AND_SECURITY.md` — privacy, donation, and security policies
+- `LAUNCH_CHECKLIST.md` — final review tasks before public launch
+- `SECURITY.md` — privacy-first security statement
 - `404.html` — GitHub Pages fallback page
+- `WEBSITE_AUDIT.md` — audit report for this update
 
-## Run locally
+## What changed
 
-Open `index.html` in a modern browser. No server or build tools are required.
+- Rebuilt the main page to match the required Ninja Park sections and wording.
+- Improved accessibility with a skip link, keyboard focus styles, and responsive layout.
+- Added clear disclaimers that this is a community fundraiser, not a registered charity (unless status is confirmed).
+- Updated documentation files for launch readiness, privacy, transparency, and security.
 
-## Publish guidance
+## Remaining placeholders
 
-- Keep the default `<meta name="robots" content="noindex, nofollow" />` until the Ninja Park campaign details and contact information are verified.
-- When ready, change the meta robots tag to `index, follow`.
-- Publish from the repository branch and root folder.
+- `[Add exact bin directions here]`
+- `[Add contact email here]`
+- `[insert goal]`
+- `[insert amount]`
+- `[insert milestone]`
+- `[Organizer name or group]`
+- `[Optional phone placeholder]`
+- `[Social media placeholder]`
 
-## Privacy-first design
+## Preview locally
 
-- No analytics or external tracking
-- No collection of credit card details or online payment processing
-- No online donation forms
-- No personal data collected directly through the website
-- Contact details are placeholders until verified
+1. Open `index.html` in a modern browser.
+2. For a local server preview, run:
+   - `python3 -m http.server 8000`
+   - open `http://localhost:8000`
 
-## Notes for organizers
+## Publish with GitHub Pages
 
-- Update the bottle bin location placeholder with exact directions.
-- Replace contact placeholders with the organizer name, email, phone, and social details.
-- Confirm whether registered charity status is available before offering tax receipts.
-- Use `DONATION_TRANSPARENCY.md` and `PRIVACY_AND_SECURITY.md` to share accurate guidance with supporters.
+1. Confirm all placeholders are updated.
+2. Change the robots meta tag in `index.html` from `noindex, nofollow` to `index, follow` when the campaign is ready to publish publicly.
+3. Commit your changes and push to GitHub:
+   - `git add .`
+   - `git commit -m "Publish Ninja Park site with launch-ready content"`
+   - `git push origin main`
+4. Ensure GitHub Pages is enabled for the `main` branch and root folder.
+5. Verify the live site at `https://<username>.github.io/<repository>/`.

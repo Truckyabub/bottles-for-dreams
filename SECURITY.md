@@ -14,6 +14,7 @@ This website is a static Ninja Park project built for awareness and community su
 
 This project is composed entirely of static HTML, CSS, and JavaScript. All interactive elements run locally in the browser.
 
-## Future features
+## Future updates
 
-Any future contact, bottle drop-off, or donation instructions must be verified before publishing. No payment or personal data collection should be added without explicit approval.
+- Any future contact, bottle drop-off, or donation instructions must be verified before publishing.
+- No payment or personal data collection should be added without explicit approval.
