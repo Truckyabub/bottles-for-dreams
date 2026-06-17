@@ -1,15 +1,16 @@
 # Launch Checklist
 
-Use this checklist when publishing the GitHub Pages site from the `main` branch.
-
-- [ ] Verify the repository branch is `main`.
-- [ ] Confirm `index.html`, `styles.css`, and `script.js` are present at the repository root.
-- [ ] Confirm `404.html` exists at the repository root.
-- [ ] Confirm `.nojekyll` exists at the repository root.
-- [ ] Confirm `README.md`, `SECURITY.md`, and `LAUNCH_CHECKLIST.md` are up to date.
-- [ ] Confirm the site contains no external analytics or tracking scripts.
-- [ ] In GitHub repository settings, enable Pages from `main` branch and `/ (root)`.
-- [ ] Save GitHub Pages settings and note the published URL.
-- [ ] Visit the URL and verify the page loads with navigation links working.
-- [ ] Confirm the three games work correctly in the browser.
-- [ ] Confirm the site is mobile responsive on a phone or narrow screen.
+- [ ] Confirm Ninja Park organizer permission and approval to publish
+- [ ] Verify the bottle bin location and Sunset Shores directions
+- [ ] Confirm the organizer name and contact details are correct
+- [ ] Confirm wording uses Ninja Park community fundraiser, Ninja Park bottle drive, local support project, and private contribution
+- [ ] Confirm the transparency section reflects actual tracking and use of funds
+- [ ] Confirm the disclaimer makes it clear that tax receipts are not issued unless registered charity status is confirmed
+- [ ] Confirm the site does not collect payment or credit card information
+- [ ] Confirm no external analytics or tracking scripts are added
+- [ ] Test on mobile devices for readability and navigation
+- [ ] Test on desktop devices for layout and responsiveness
+- [ ] Test all links and anchor navigation
+- [ ] Review `DONATION_TRANSPARENCY.md` and `PRIVACY_AND_SECURITY.md` for accuracy
+- [ ] Update `<meta name="robots" content="index, follow" />` only when the Ninja Park campaign is ready for public launch
+- [ ] Confirm the site copy remains warm, honest, community-driven, and hopeful

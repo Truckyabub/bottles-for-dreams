@@ -1,43 +1,43 @@
-# Ninja Park Bottle Drive Fundraiser
+# Ninja Park
 
-A fully static GitHub Pages site for the Ninja Park Bottle Drive Fundraiser. The site is built for privacy and mobile responsiveness, with no backend, no analytics, and no tracking.
+A polished website for the Ninja Park bottle drive & community fundraiser.
 
-## What is included
+## Purpose
 
-- `index.html` — single-page responsive website
-- `styles.css` — accessible styling and layout
-- `script.js` — three built-in games: Bottle Catch, Recycle Sorter, Memory Match
-- `SECURITY.md` — vulnerability reporting and privacy policy notes
-- `LAUNCH_CHECKLIST.md` — publish and verification checklist
-- `404.html` — custom GitHub Pages not found page
-- `.nojekyll` — disables Jekyll processing on GitHub Pages
+This site is built for a Ninja Park community fundraiser that welcomes bottle donations at Sunset Shores and private support through e-transfer, cash donations, sponsorships, materials, volunteer help, and community sharing.
 
-## Publish instructions
+## Files
 
-1. Confirm the repository uses the `main` branch.
-2. Confirm the site files are at the repository root (`/`).
-3. In GitHub, open the repository `Settings` > `Pages`.
-4. Under Source, select `main` branch and `/ (root)` folder.
-5. Save and wait for GitHub Pages to generate the site.
-6. Visit the provided GitHub Pages URL.
-7. Test the homepage, games, and custom `404.html` page.
+- `index.html` — landing page content and Ninja Park fundraiser sections
+- `styles.css` — responsive design, bright color palette, and friendly layout
+- `script.js` — small enhancements for progress labels and link security
+- `DONATION_TRANSPARENCY.md` — donation tracking and transparency guidance
+- `PRIVACY_AND_SECURITY.md` — privacy, safety, and donor guidance
+- `LAUNCH_CHECKLIST.md` — pre-launch review checklist
+- `SECURITY.md` — privacy and security assurance statements
+- `404.html` — GitHub Pages fallback page
 
-## Local preview
+## Run locally
 
-Open `index.html` in a browser or use a local HTTP server if needed.
+Open `index.html` in a modern browser. No server or build tools are required.
 
-### Example local preview command
+## Publish guidance
 
-```bash
-cd /Users/mufasa/Documents/GitHub/bottles-for-dreams
-python3 -m http.server 8000
-```
+- Keep the default `<meta name="robots" content="noindex, nofollow" />` until the Ninja Park campaign details and contact information are verified.
+- When ready, change the meta robots tag to `index, follow`.
+- Publish from the repository branch and root folder.
 
-Then visit `http://localhost:8000`.
+## Privacy-first design
 
-## Privacy and design notes
+- No analytics or external tracking
+- No collection of credit card details or online payment processing
+- No online donation forms
+- No personal data collected directly through the website
+- Contact details are placeholders until verified
 
-- No external scripts, fonts, or analytics are used.
-- No forms send data to a backend.
-- All game logic runs client-side in the browser.
-- Section links and anchors are verified in the static page.
+## Notes for organizers
+
+- Update the bottle bin location placeholder with exact directions.
+- Replace contact placeholders with the organizer name, email, phone, and social details.
+- Confirm whether registered charity status is available before offering tax receipts.
+- Use `DONATION_TRANSPARENCY.md` and `PRIVACY_AND_SECURITY.md` to share accurate guidance with supporters.

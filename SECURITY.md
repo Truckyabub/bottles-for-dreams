@@ -1,20 +1,19 @@
-# Security Policy
+# Security and Privacy Statement
 
-## Supported security issue types
+This website is a static Ninja Park project built for awareness and community support. It is intentionally simple, privacy-first, and safe.
 
-- Vulnerabilities in static site code
-- Privacy concerns arising from page content
-- Broken or unsafe links
-- Accessibility issues affecting navigation or content
+## What this site does not do
 
-## Reporting a vulnerability
+- It does not collect personal information.
+- It does not process payments.
+- It does not use cookies for tracking.
+- It does not include analytics or visitor tracking scripts.
+- It does not connect to a backend or database.
 
-If you discover a security issue, please open an issue in this repository with a clear description of the problem and reproducible steps.
+## Static site behavior
 
-## Privacy
+This project is composed entirely of static HTML, CSS, and JavaScript. All interactive elements run locally in the browser.
 
-This site is intentionally built without analytics or tracking. No personal data is collected, stored, or transmitted by this repository.
+## Future features
 
-## Responsible disclosure
-
-Please allow maintainers time to respond before publicly disclosing any vulnerability.
+Any future contact, bottle drop-off, or donation instructions must be verified before publishing. No payment or personal data collection should be added without explicit approval.
