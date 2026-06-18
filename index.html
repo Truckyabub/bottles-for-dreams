@@ -1,351 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Ninja Park is a privacy-first preview page for a rural bottle drive fundraiser building a safe, inclusive park dream centered on a future zipline." />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ninja Park | Every child matters — no ifs, ands, or buts" />
-  <meta property="og:description" content="Support a rural community as it centers the zipline dream in a safe, honest preview of a future Ninja Park for children." />
-  <meta property="og:url" content="https://truckyabub.github.io/bottles-for-dreams/" />
-  <meta property="og:site_name" content="Ninja Park" />
-  <meta name="theme-color" content="#f8c765" />
-  <link rel="stylesheet" href="styles.css" />
-  <title>Ninja Park | Every child matters</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A family tribute website honouring George Alexander Carey, Pa George, and the community legacy of pool, family, and the annual 9-ball tournament.">
+  <meta name="theme-color" content="#15372d">
+  <meta property="og:title" content="Pa’s Place | Honouring George Alexander Carey">
+  <meta property="og:description" content="A family tribute website honouring George Alexander Carey, Pa George, and the community legacy of pool, family, and the annual 9-ball tournament.">
+  <meta property="og:type" content="website">
+  <title>Pa’s Place | Honouring George Alexander Carey</title>
+  <!-- Favicon can be added here later if the family supplies one. -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/print.css" media="print">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top">Ninja Park</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
-        <span class="nav-toggle-label">Menu</span>
+    <div class="site-header__inner">
+      <a class="brand" href="#home" aria-label="Pa’s Place home">
+        <span class="brand-mark" aria-hidden="true">PP</span>
+        <span class="brand-text">
+          <strong>Pa’s Place</strong>
+          <span>Family. Pool. Community. Legacy.</span>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span aria-hidden="true">Menu</span>
       </button>
-      <nav aria-label="Primary navigation" id="primary-navigation">
-        <ul class="nav-list">
-          <li><a href="#why">Why</a></li>
-          <li><a href="#zipline">Zipline</a></li>
-          <li><a href="#journey">Journey</a></li>
-          <li><a href="#bins">Bottle Bins</a></li>
-          <li><a href="#support">Ways to Support</a></li>
-          <li><a href="#impact">Impact</a></li>
-          <li><a href="#games">Games</a></li>
-          <li><a href="#trust">Trust</a></li>
-        </ul>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About Pa George</a>
+        <a href="#legacy">Tournament Legacy</a>
+        <a href="#event">Event Info</a>
+        <a href="#sponsors">Sponsors</a>
+        <a href="#memory">Memory Wall</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Every child matters — no ifs, ands, or buts</p>
-          <h1>The zipline is the heart of our Ninja Park dream for every child.</h1>
-          <p class="hero-subtitle">This preview page centers the proposed zipline, child safety, and the promise that every child deserves a place to belong and soar.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#zipline">Zipline Focus</a>
-            <a class="button button-secondary" href="#support">Ways to Support</a>
-            <a class="button button-secondary" href="#games">Play the Cleanup Game</a>
-          </div>
-          <p class="hero-note">This page is a preview of the Ninja Park project. Official donation and bottle drop-off details will be added once confirmed.</p>
+    <section class="hero section reveal" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Family-built tribute</p>
+        <h1 id="hero-title">Pa’s Place</h1>
+        <p class="hero-subtitle">Honouring George Alexander Carey, lovingly known as Pa George, with a warm home for family stories, pool memories, sponsor recognition, and the Pa George 9-Ball Tournament legacy.</p>
+        <p class="hero-tagline">Family. Pool. Community. Legacy.</p>
+        <p class="hero-intro">“Pa’s Place is a family-built tribute to George Alexander Carey, lovingly known as Pa George — a place to honour his life, his love of pool, his family, and the community spirit carried forward in his name.”</p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#about">Learn His Story</a>
+          <a class="button button-secondary" href="#legacy">Tournament Legacy</a>
+          <a class="button button-secondary" href="#sponsors">Sponsor or Support</a>
+          <a class="button button-secondary" href="#gallery">View Gallery</a>
         </div>
 
-        <div class="hero-illustration" aria-hidden="true">
-          <div class="hero-sun"></div>
-          <div class="hero-cloud cloud-one"></div>
-          <div class="hero-cloud cloud-two"></div>
-          <div class="hero-cloud cloud-three"></div>
-          <div class="tree-row">
-            <div class="tree tree-small"></div>
-            <div class="tree tree-large"></div>
-            <div class="tree tree-medium"></div>
+        <p class="verification-note">Information marked as needing verification should be confirmed by family before publishing.</p>
+      </div>
+
+      <aside class="hero-visual" aria-hidden="true">
+        <div class="felt-panel">
+          <div class="felt-glow"></div>
+          <div class="felt-table">
+            <div class="table-rail table-rail-top"></div>
+            <div class="table-rail table-rail-bottom"></div>
+            <div class="table-rail table-rail-left"></div>
+            <div class="table-rail table-rail-right"></div>
+            <div class="rack"></div>
+            <div class="cue"></div>
+            <div class="nine-ball">9</div>
+            <div class="table-light"></div>
           </div>
-          <div class="hero-hill"></div>
-          <div class="hero-gate">
-            <span class="gate-label">Ninja Park</span>
-            <span class="gate-sub">Coming Soon</span>
+          <div class="hero-card">
+            <span class="badge">Legacy archive</span>
+            <p>Build the family story carefully, one verified detail at a time.</p>
           </div>
-          <div class="hero-path"></div>
-          <div class="hero-bottles">
-            <div class="bottle bottle-one"></div>
-            <div class="bottle bottle-two"></div>
-            <div class="bottle bottle-three"></div>
-          </div>
-          <div class="hero-leaf leaf-one"></div>
-          <div class="hero-leaf leaf-two"></div>
-          <div class="hero-leaf leaf-three"></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section reveal" id="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <p class="eyebrow">About Pa George</p>
+        <h2 id="about-title">A tribute that keeps family memories in the right hands</h2>
+      </div>
+
+      <div class="panel panel-intro">
+        <p>“George Alexander Carey, known to many as Pa George, left behind more than memories. He left behind lessons, laughter, family stories, and a love for the game of pool that brought people together. Pa’s Place exists to keep that spirit alive for family, friends, players, and the community.”</p>
+      </div>
+
+      <div class="feature-grid feature-grid--5">
+        <article class="info-card reveal">
+          <h3>Life Dates</h3>
+          <!-- EDIT: Add verified life dates here only after family confirmation -->
+          <p>[Add verified life dates if family chooses]</p>
+        </article>
+        <article class="info-card reveal">
+          <h3>Family Story</h3>
+          <!-- EDIT: Add approved family story here only after family review -->
+          <p>[Add approved family story]</p>
+        </article>
+        <article class="info-card reveal">
+          <h3>Favourite Sayings</h3>
+          <!-- EDIT: Add family-approved sayings here only after family review -->
+          <p>[Add family-approved sayings]</p>
+        </article>
+        <article class="info-card reveal">
+          <h3>Pool Memories</h3>
+          <!-- EDIT: Add verified pool memories here only after family confirmation -->
+          <p>[Add verified memories]</p>
+        </article>
+        <article class="info-card reveal">
+          <h3>Community Memories</h3>
+          <!-- EDIT: Add verified community memories here only after family confirmation -->
+          <p>[Add verified memories]</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="legacy" aria-labelledby="legacy-title">
+      <div class="section-heading">
+        <p class="eyebrow">Tournament Legacy</p>
+        <h2 id="legacy-title">The Pa George 9-Ball story is a living archive, not a fixed claim</h2>
+      </div>
+
+      <div class="verification-banner" role="note">
+        Family verification required: the timeline below is intentionally labeled as a working archive, not final history.
+      </div>
+
+      <div class="panel">
+        <p>The George Carey / Pa George 9-Ball Tournament has become a community tradition built around friendship, family, good competition, and giving back.</p>
+      </div>
+
+      <div class="feature-grid feature-grid--5">
+        <article class="info-card info-card--accent reveal">
+          <h3>Tournament History</h3>
+          <p>Shared stories, yearly updates, and verified archive notes can live here.</p>
+        </article>
+        <article class="info-card info-card--accent reveal">
+          <h3>Annual 9-Ball Event</h3>
+          <p>Use this space for confirmed yearly event details only.</p>
+        </article>
+        <article class="info-card info-card--accent reveal">
+          <h3>Community Fundraising</h3>
+          <p>Keep donations, totals, and recipient information listed only after confirmation.</p>
+        </article>
+        <article class="info-card info-card--accent reveal">
+          <h3>Sponsors &amp; Supporters</h3>
+          <p>Recognize community support with permission and careful wording.</p>
+        </article>
+        <article class="info-card info-card--accent reveal">
+          <h3>Family Legacy</h3>
+          <p>Preserve the tournament as a family archive that can grow year by year.</p>
+        </article>
+      </div>
+
+      <div class="timeline panel">
+        <h3>Family Archive Timeline — Details To Be Verified</h3>
+        <div class="timeline-list">
+          <article class="timeline-item reveal">
+            <span class="timeline-year">2014</span>
+            <p>Tournament legacy begins / verify details</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-year">2018</span>
+            <p>George Carey Open / milestone year / verify details</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-year">2023</span>
+            <p>Pa George celebrated by community / verify details</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-year">2024</span>
+            <p>Community fundraiser year / verify details</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-year">2025</span>
+            <p>Milestone tournament year / verify details</p>
+          </article>
+          <article class="timeline-item reveal">
+            <span class="timeline-year">2026</span>
+            <p>Current or upcoming tournament details / verify details</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="bins">
-      <div class="container card-card">
-        <span class="section-label">Bottle Bins</span>
-        <h2>Bring bottles and cans to the Sunset Shores collection bins when the details are confirmed.</h2>
-        <p>Every bottle keeps the Ninja Park dream moving forward. When official drop-off directions are shared, this will be the place to start.</p>
-        <div class="feature-list">
-          <p><strong>How to help:</strong></p>
-          <ul>
-            <li>Save bottles and cans in a bag or box.</li>
-            <li>Keep recyclables clean and separated where needed.</li>
-            <li>Do not leave trash or unsafe items at the bins.</li>
-            <li>Watch for the confirmed Sunset Shores bin details coming soon.</li>
+    <section class="section reveal" id="event" aria-labelledby="event-title">
+      <div class="section-heading">
+        <p class="eyebrow">Event Info</p>
+        <h2 id="event-title">Annual Pa George Memorial 9-Ball Tournament</h2>
+      </div>
+
+      <article class="event-poster panel">
+        <div class="event-copy" id="event-copy-source">
+          <p class="event-lead">Current event details should be confirmed by the family before publication.</p>
+          <dl class="event-details">
+            <div>
+              <dt>Date</dt>
+              <dd>[Add Date]</dd>
+            </div>
+            <div>
+              <dt>Time</dt>
+              <dd>[Add Time]</dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd>[Add Venue]</dd>
+            </div>
+            <div>
+              <dt>Registration</dt>
+              <dd>[Add Details]</dd>
+            </div>
+            <div>
+              <dt>Entry Fee</dt>
+              <dd>[Add Details]</dd>
+            </div>
+            <div>
+              <dt>Contact</dt>
+              <dd>[Add Family-Approved Contact]</dd>
+            </div>
+            <div>
+              <dt>Charity Recipient</dt>
+              <dd>[Add Confirmed Charity]</dd>
+            </div>
+            <div>
+              <dt>Silent Auction</dt>
+              <dd>[Yes/No + Details]</dd>
+            </div>
+            <div>
+              <dt>Sponsors</dt>
+              <dd>[Add Sponsors]</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="event-actions screen-only">
+          <button class="button button-primary" type="button" data-copy-event-details>Copy Event Details</button>
+          <button class="button button-secondary" type="button" data-print-poster>Print Event Poster</button>
+          <button class="button button-secondary" type="button" data-coming-soon>Add to Calendar - Coming Soon</button>
+        </div>
+
+        <p class="event-note">Want to play, sponsor, donate an auction item, or help out? Contact the family or event organizer below.</p>
+      </article>
+    </section>
+
+    <section class="section reveal" id="sponsors" aria-labelledby="sponsors-title">
+      <div class="section-heading">
+        <p class="eyebrow">Sponsors</p>
+        <h2 id="sponsors-title">Sponsor recognition belongs here only after permission is confirmed</h2>
+      </div>
+
+      <div class="panel">
+        <p>Pa’s Place recognizes the people and businesses who help keep this community tradition alive.</p>
+      </div>
+
+      <div class="sponsor-groups">
+        <article class="sponsor-group reveal">
+          <h3>Gold Sponsors</h3>
+          <div class="placeholder-grid">
+            <div class="placeholder-card">Sponsor Name Coming Soon</div>
+            <div class="placeholder-card">Sponsor Name Coming Soon</div>
+          </div>
+        </article>
+        <article class="sponsor-group reveal">
+          <h3>Silver Sponsors</h3>
+          <div class="placeholder-grid">
+            <div class="placeholder-card">Sponsor Name Coming Soon</div>
+            <div class="placeholder-card">Sponsor Name Coming Soon</div>
+          </div>
+        </article>
+        <article class="sponsor-group reveal">
+          <h3>Community Supporters</h3>
+          <div class="placeholder-grid">
+            <div class="placeholder-card">Community Supporter Coming Soon</div>
+            <div class="placeholder-card">Community Supporter Coming Soon</div>
+          </div>
+        </article>
+        <article class="sponsor-group reveal">
+          <h3>Silent Auction Donors</h3>
+          <div class="placeholder-grid">
+            <div class="placeholder-card">Silent Auction Donor Coming Soon</div>
+            <div class="placeholder-card">Silent Auction Donor Coming Soon</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="panel callout">
+        <p>If you would like to sponsor, please use the contact section below once a family-approved email is added.</p>
+        <a class="button button-primary" href="#contact">Sponsor Inquiry</a>
+      </div>
+    </section>
+
+    <section class="section reveal" id="giving-back" aria-labelledby="giving-back-title">
+      <div class="section-heading">
+        <p class="eyebrow">Charity / Giving Back</p>
+        <h2 id="giving-back-title">Giving back stays careful, verified, and family-approved</h2>
+      </div>
+
+      <div class="panel">
+        <p>“Giving back has always been part of the spirit of Pa’s Place. Tournament fundraising and community support information will be listed here once confirmed by the family and partner organizations.”</p>
+        <p class="strong-note">Official donation information coming soon after confirmation.</p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="memory" aria-labelledby="memory-title">
+      <div class="section-heading">
+        <p class="eyebrow">Memory Wall</p>
+        <h2 id="memory-title">A warm place for family-approved stories</h2>
+      </div>
+
+      <p class="section-intro">Stories shown here should be family-approved before publishing.</p>
+
+      <div class="memory-wall">
+        <article class="memory-card reveal">
+          <h3>A Lesson From Pa</h3>
+          <p>[Short placeholder memory about something Pa taught or modeled.]</p>
+          <footer>— [Family Member Name]</footer>
+        </article>
+        <article class="memory-card reveal">
+          <h3>A Pool Hall Memory</h3>
+          <p>[Short placeholder memory from a night at the table, a match, or a laugh with friends.]</p>
+          <footer>— [Family Member Name]</footer>
+        </article>
+        <article class="memory-card reveal">
+          <h3>A Family Gathering</h3>
+          <p>[Short placeholder memory about a family meal, holiday, or gathering.]</p>
+          <footer>— [Family Member Name]</footer>
+        </article>
+        <article class="memory-card reveal">
+          <h3>A Moment We’ll Never Forget</h3>
+          <p>[Short placeholder memory that feels personal, respectful, and true.]</p>
+          <footer>— [Family Member Name]</footer>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-heading">
+        <p class="eyebrow">Photo Gallery</p>
+        <h2 id="gallery-title">Placeholder images are supported, so the site still feels complete</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <button class="gallery-card reveal" type="button" data-gallery-item data-gallery-title="Pa George" data-gallery-caption="Pa George" data-gallery-src="assets/images/pa-george-1.jpg" data-gallery-alt="Family photo placeholder for Pa George">
+          <span class="gallery-media">
+            <img src="assets/images/pa-george-1.jpg" alt="Family photo placeholder for Pa George" loading="lazy">
+            <span class="gallery-placeholder" aria-hidden="true">
+              <span class="gallery-placeholder__ball">9</span>
+              <span>Photo coming soon</span>
+            </span>
+          </span>
+          <span class="gallery-meta">Pa George</span>
+        </button>
+
+        <button class="gallery-card reveal" type="button" data-gallery-item data-gallery-title="Tournament" data-gallery-caption="Tournament" data-gallery-src="assets/images/tournament-1.jpg" data-gallery-alt="Tournament photo placeholder">
+          <span class="gallery-media">
+            <img src="assets/images/tournament-1.jpg" alt="Tournament photo placeholder" loading="lazy">
+            <span class="gallery-placeholder" aria-hidden="true">
+              <span class="gallery-placeholder__ball">Rack</span>
+              <span>Photo coming soon</span>
+            </span>
+          </span>
+          <span class="gallery-meta">Tournament</span>
+        </button>
+
+        <button class="gallery-card reveal" type="button" data-gallery-item data-gallery-title="Family" data-gallery-caption="Family" data-gallery-src="assets/images/family-1.jpg" data-gallery-alt="Family photo placeholder">
+          <span class="gallery-media">
+            <img src="assets/images/family-1.jpg" alt="Family photo placeholder" loading="lazy">
+            <span class="gallery-placeholder" aria-hidden="true">
+              <span class="gallery-placeholder__ball">Home</span>
+              <span>Photo coming soon</span>
+            </span>
+          </span>
+          <span class="gallery-meta">Family</span>
+        </button>
+
+        <button class="gallery-card reveal" type="button" data-gallery-item data-gallery-title="Players" data-gallery-caption="Players" data-gallery-src="assets/images/players-1.jpg" data-gallery-alt="Players photo placeholder">
+          <span class="gallery-media">
+            <img src="assets/images/players-1.jpg" alt="Players photo placeholder" loading="lazy">
+            <span class="gallery-placeholder" aria-hidden="true">
+              <span class="gallery-placeholder__ball">Cue</span>
+              <span>Photo coming soon</span>
+            </span>
+          </span>
+          <span class="gallery-meta">Players</span>
+        </button>
+
+        <button class="gallery-card reveal" type="button" data-gallery-item data-gallery-title="Sponsors" data-gallery-caption="Sponsors" data-gallery-src="assets/images/sponsors-1.jpg" data-gallery-alt="Sponsors photo placeholder">
+          <span class="gallery-media">
+            <img src="assets/images/sponsors-1.jpg" alt="Sponsors photo placeholder" loading="lazy">
+            <span class="gallery-placeholder" aria-hidden="true">
+              <span class="gallery-placeholder__ball">Thanks</span>
+              <span>Photo coming soon</span>
+            </span>
+          </span>
+          <span class="gallery-meta">Sponsors</span>
+        </button>
+
+        <button class="gallery-card reveal" type="button" data-gallery-item data-gallery-title="Community" data-gallery-caption="Community" data-gallery-src="assets/images/community-1.jpg" data-gallery-alt="Community photo placeholder">
+          <span class="gallery-media">
+            <img src="assets/images/community-1.jpg" alt="Community photo placeholder" loading="lazy">
+            <span class="gallery-placeholder" aria-hidden="true">
+              <span class="gallery-placeholder__ball">Carey</span>
+              <span>Photo coming soon</span>
+            </span>
+          </span>
+          <span class="gallery-meta">Community</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section reveal" id="contact" aria-labelledby="contact-title">
+      <div class="section-heading">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Use mailto only when the family has approved the address</h2>
+      </div>
+
+      <div class="contact-grid">
+        <article class="panel contact-card">
+          <h3>Contact Reasons</h3>
+          <ul class="plain-list">
+            <li>Tournament questions</li>
+            <li>Sponsorship</li>
+            <li>Silent auction donations</li>
+            <li>Family archive/photo submissions</li>
+            <li>Corrections to website information</li>
           </ul>
-        </div>
-        <p class="support-note">This page is a preview. Official bottle drop-off guidance will be added when confirmed.</p>
-      </div>
-    </section>
+          <p class="strong-note">Please do not send private family information unless you have permission from those involved.</p>
+        </article>
 
-    <section class="section section-soft" id="why">
-      <div class="container story-grid">
-        <div class="story-text">
-          <span class="section-label">Why This Matters</span>
-          <h2>Small towns deserve big dreams too — especially when children need safe places to move, laugh, and make friends.</h2>
-          <p>In bigger cities, playgrounds and activity spaces may feel common. In rural communities, those places are rare and precious. Ninja Park is a hopeful project that turns simple bottle collection into a shared way for families to build belonging together.</p>
-          <p>Every bottle collected is a small act that helps a local child feel welcomed, a family feel seen, and a community grow stronger.</p>
-        </div>
-        <div class="story-cards">
-          <article class="story-card">
-            <h3>Built by Bottles, Powered by Community</h3>
-            <p>When neighbours bring their bottles, they help make the dream of a joyful play space a real possibility.</p>
-          </article>
-          <article class="story-card">
-            <h3>A Rural Dream Worth Building</h3>
-            <p>Children in smaller communities deserve outdoor spaces that inspire confidence, movement, and quiet moments of wonder.</p>
-          </article>
-          <article class="story-card">
-            <h3>The Miracle We Are Creating Together</h3>
-            <p>Community effort turns recycling into recreation, and that shared energy becomes a safe space where kids can grow.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="journey">
-      <div class="container">
-        <span class="section-label">Progress Journey</span>
-        <h2>Follow the path from early awareness to the Ninja Park gate.</h2>
-        <p>Every stage is a step forward — from stories shared across town to the day children can climb and play together.</p>
-        <div class="timeline">
-          <div class="timeline-line"></div>
-          <div class="timeline-stage stage-one">
-            <span class="stage-number">1</span>
-            <div>
-              <h3>Community Awareness</h3>
-              <p>Neighbors learn about the idea and begin dreaming of a park for local children.</p>
-            </div>
+        <article class="panel contact-card">
+          <h3>Family-Approved Email</h3>
+          <p class="email-placeholder">[ADD_FAMILY_APPROVED_EMAIL_HERE]</p>
+          <p>This contact area intentionally avoids a form. Add a verified email address before publishing any mailto link.</p>
+          <div class="contact-actions">
+            <span class="button button-primary button-disabled" aria-disabled="true">Contact Email Coming Soon</span>
           </div>
-          <div class="timeline-stage stage-two">
-            <span class="stage-number">2</span>
-            <div>
-              <h3>Bottle Collection Begins</h3>
-              <p>Every bag of bottles starts to shape the path toward a welcoming outdoor space.</p>
-            </div>
-          </div>
-          <div class="timeline-stage stage-three">
-            <span class="stage-number">3</span>
-            <div>
-              <h3>Support Grows</h3>
-              <p>Volunteers, business sponsors, and families join the effort to help the park take shape.</p>
-            </div>
-          </div>
-          <div class="timeline-stage stage-four">
-            <span class="stage-number">4</span>
-            <div>
-              <h3>Park Planning</h3>
-              <p>Design ideas are refined so the Ninja Park feels safe, welcoming, and full of adventure.</p>
-            </div>
-          </div>
-          <div class="timeline-stage stage-five">
-            <span class="stage-number">5</span>
-            <div>
-              <h3>Final Stages Coming Soon</h3>
-              <p>Official details and drop-off locations will be shared as plans are confirmed.</p>
-            </div>
-          </div>
-          <div class="timeline-stage stage-six">
-            <span class="stage-number">6</span>
-            <div>
-              <h3>Kids Flourishing</h3>
-              <p>One day soon, children will run, climb, and discover confidence in a park built by their community.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="zipline">
-      <div class="container card-card">
-        <span class="section-label">Zipline Heart</span>
-        <h2>The proposed zipline is the main attraction, emotional centerpiece, and first sponsorship focus of Ninja Park.</h2>
-        <p>The zipline remains a future attraction concept only. It is the signature dream of the park design, not a current or approved play feature.</p>
-        <div class="feature-list">
-          <p><strong>Zipline planning principles:</strong></p>
-          <ul>
-            <li>Professional zipline design and engineers must review the plan.</li>
-            <li>Certified installation, inspection, insurance, and permits are required before opening.</li>
-            <li>Ongoing maintenance, safety supervision, and accessibility review are essential.</li>
-            <li>No child may use the feature until all safety approvals, training, and documentation are in place.</li>
-          </ul>
-        </div>
-        <p class="support-note">Zipline sponsorship interest is prioritized while all project details remain subject to confirmed planning, review, and community approval.</p>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="support">
-      <div class="container">
-        <span class="section-label">Ways to Support — Coming Soon</span>
-        <h2>Whether it is one bottle, one bag, one share, or one helping hand, every act of support moves the Ninja Park dream closer.</h2>
-        <div class="support-grid">
-          <div class="support-card">
-            <h3>Zipline Sponsorship</h3>
-            <p>The zipline is the strongest donation focus and the first attraction highlighted here. Support is intended for planning, safety review, and responsible future development.</p>
-          </div>
-          <div class="support-card">
-            <h3>Bottle Donations</h3>
-            <p>Collect bottles and cans for Sunset Shores bins when details are confirmed. One bottle can start a bigger story.</p>
-          </div>
-          <div class="support-card">
-            <h3>General Park Support</h3>
-            <p>Support for equipment, safety surfacing, seating, shade, and maintenance planning helps the entire park idea feel more complete.</p>
-          </div>
-          <div class="support-card">
-            <h3>Volunteer Help</h3>
-            <p>Volunteers can help with outreach, cleanup, and celebration once the official plan is in place. Supervision and child safety are top priorities.</p>
-          </div>
-          <div class="support-card">
-            <h3>Local Business Sponsorship</h3>
-            <p>Businesses can support materials, accessibility upgrades, and community pride when the official sponsorship program launches.</p>
-          </div>
-          <div class="support-card">
-            <h3>Share the Fundraiser</h3>
-            <p>Tell a neighbour, post in a local group, or bring a friend. Every share helps the community feel included and keeps the project honest.</p>
-          </div>
-        </div>
-        <p class="support-note">Official donation and bottle drop-off details will be added once confirmed. No payment links are active on this site today.</p>
-      </div>
-    </section>
-
-    <section class="section" id="impact">
-      <div class="container">
-        <span class="section-label">Emotional Impact</span>
-        <h2>What a Ninja Park can give children in a smaller rural community.</h2>
-        <div class="impact-grid">
-          <article class="impact-card">
-            <span class="impact-icon">🤝</span>
-            <h3>A Place to Belong</h3>
-            <p>Kids need places where they feel included, seen, and supported.</p>
-          </article>
-          <article class="impact-card">
-            <span class="impact-icon">💪</span>
-            <h3>A Place to Move</h3>
-            <p>Outdoor activity builds strength, confidence, balance, and resilience.</p>
-          </article>
-          <article class="impact-card">
-            <span class="impact-icon">🌈</span>
-            <h3>A Place to Dream</h3>
-            <p>A Ninja Park gives children a space to imagine bigger possibilities.</p>
-          </article>
-          <article class="impact-card">
-            <span class="impact-icon">🍃</span>
-            <h3>A Cleaner Community</h3>
-            <p>Bottle collection helps clean shared spaces while raising support.</p>
-          </article>
-          <article class="impact-card">
-            <span class="impact-icon">✨</span>
-            <h3>A Shared Miracle</h3>
-            <p>When a community works together, small actions become something powerful.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="games">
-      <div class="container">
-        <span class="section-label">Interactive Preview</span>
-        <h2>Play a little game and imagine the Ninja Park growing with every caring choice.</h2>
-        <div class="game-grid">
-          <div class="game-card">
-            <h3>Bottle Cleanup Dash</h3>
-            <p>Click the glowing bottles to collect them, and celebrate the community cleanup as the park dream grows.</p>
-            <div class="bottle-grid" id="bottle-board" aria-live="polite">
-              <button type="button" class="bottle-card" data-id="1">Bottle</button>
-              <button type="button" class="bottle-card" data-id="2">Bottle</button>
-              <button type="button" class="bottle-card" data-id="3">Bottle</button>
-              <button type="button" class="bottle-card" data-id="4">Bottle</button>
-              <button type="button" class="bottle-card" data-id="5">Bottle</button>
-              <button type="button" class="bottle-card" data-id="6">Bottle</button>
-            </div>
-            <p class="game-message" id="cleanup-message">One bottle can start a bigger story.</p>
-          </div>
-          <div class="game-card">
-            <h3>Build the Ninja Park</h3>
-            <p>Add park pieces to watch the Ninja Park design come to life with bright obstacles and joyful celebration.</p>
-              <div class="park-builder" id="park-builder">
-              <div class="park-piece" id="piece-1">Balance Beam</div>
-              <div class="park-piece" id="piece-2">Rope Bridge</div>
-              <div class="park-piece" id="piece-3">Climb Wall</div>
-              <div class="park-piece" id="piece-4">Swing Circle</div>
-              <div class="park-piece" id="piece-5">Zipline — final unlock</div>
-            </div>
-            <div class="builder-actions">
-              <button type="button" class="button button-primary" id="build-piece">Add Next Piece</button>
-            </div>
-            <p class="game-message" id="build-message">Each piece makes the park feel more alive; the zipline is the final unlock.</p>
-          </div>
-          <div class="game-card meter-card">
-            <h3>Miracle Meter</h3>
-            <p>Watch sunlight fill the path as support grows and the community moves toward a hopeful park launch.</p>
-            <div class="meter-shell" aria-hidden="true">
-              <div class="meter-fill" id="meter-fill"></div>
-            </div>
-            <p class="meter-label" id="meter-label">The miracle is growing — one bottle, one family, one community at a time.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="final">
-      <div class="container card-card final-card">
-        <span class="section-label">Help Build the Dream</span>
-        <h2>This is more than a fundraiser. It is a chance to help children feel the joy, confidence, friendship, and adventure they deserve.</h2>
-        <p>The final stages are coming soon, and every act of support helps bring the Ninja Park wonderland closer to life.</p>
-        <div class="hero-actions final-actions">
-          <a class="button button-primary" href="#bins">Bottle Drive Details Coming Soon</a>
-          <a class="button button-secondary" href="#support">Support Options Coming Soon</a>
-          <a class="button button-secondary" href="#games">Play the Cleanup Game</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="trust">
-      <div class="container card-card trust-card">
-        <span class="section-label">Trust & Privacy</span>
-        <h2>This website is an awareness and preview page. Official details will be added only after they are confirmed.</h2>
-        <p>No personal information is collected on this website. There are no forms aimed at children, and the site is adult-facing only.</p>
-        <p>There are no active payment links on this preview site. When donation details are ready, they will be shared clearly and responsibly.</p>
-        <div class="feature-list">
-          <p><strong>Child safety and ethics focus:</strong></p>
-          <ul>
-            <li>Children’s photos and stories require parent or guardian consent before sharing.</li>
-            <li>Volunteer support is based on supervision, privacy, screening where needed, and reporting safety concerns.</li>
-            <li>The park is not currently open, approved, certified, or ready for public use.</li>
-            <li>We will only share formal cultural guidance with appropriate local Indigenous Nations, Métis representatives, Inuit representatives, Elders, Knowledge Keepers, families, and community members.</li>
-          </ul>
-        </div>
+        </article>
       </div>
     </section>
   </main>
 
+  <button class="back-to-top" type="button" aria-label="Back to top" data-back-to-top>Top</button>
+
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p class="footer-copy">Ninja Park — Bottle Drive Preview</p>
-      <p class="footer-note">Committed to privacy, transparency, and a hopeful future for rural youth play.</p>
-    </div>
+    <p>Pa’s Place — Honouring George Alexander Carey, Pa George.</p>
+    <p>Built with love by family, for family, friends, players, and community.</p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#home">Home</a>
+      <a href="#legacy">Tournament</a>
+      <a href="#sponsors">Sponsors</a>
+      <a href="#contact">Contact</a>
+      <a href="PRIVACY_AND_SAFETY.md">Privacy &amp; Safety</a>
+    </nav>
   </footer>
 
-  <script src="script.js"></script>
+  <div class="gallery-modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title">
+    <div class="gallery-modal__backdrop" data-gallery-close></div>
+    <div class="gallery-modal__panel" role="document">
+      <button class="gallery-modal__close" type="button" data-gallery-close aria-label="Close gallery preview">Close</button>
+      <div class="gallery-modal__media">
+        <img class="gallery-modal__image" alt="">
+        <div class="gallery-modal__placeholder" aria-hidden="true">
+          <span class="gallery-placeholder__ball">9</span>
+          <span>Photo coming soon</span>
+        </div>
+      </div>
+      <div class="gallery-modal__copy">
+        <h3 id="gallery-modal-title"></h3>
+        <p id="gallery-modal-caption"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
