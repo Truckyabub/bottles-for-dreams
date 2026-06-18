@@ -8,11 +8,16 @@ This site supports a local community fundraiser and bottle drive at Sunset Shore
 
 ## Files included
 
-- `index.html` — homepage with mission, bottle bin details, private support, transparency, vision, disclaimer, and contact sections
-- `styles.css` — responsive, accessible styling with sunset and forest-inspired colors
-- `script.js` — lightweight script for progress placeholders and secure external links
+- `index.html` — homepage with mission, bottle bin details, support options, safety messaging, and preview disclaimers
+- `styles.css` — responsive, accessible styling with a nature-inspired theme
+- `script.js` — lightweight interactive preview and secure browser behavior
 - `DONATION_TRANSPARENCY.md` — transparency and funds usage guidance
 - `PRIVACY_AND_SECURITY.md` — privacy, donation, and security policies
+- `DONATION_POLICY.md` — ethical donation guidance for the community project
+- `CHILD_SAFETY_AND_ETHICS.md` — child safety, privacy, and ethics commitments
+- `CULTURAL_RESPECT.md` — cultural humility and Indigenous respect guidance
+- `ACCESSIBILITY_CHECKLIST.md` — accessibility review and checklist
+- `FOUNDATION_GOVERNANCE.md` — governance and real-world confirmation guidance
 - `LAUNCH_CHECKLIST.md` — final review tasks before public launch
 - `SECURITY.md` — privacy-first security statement
 - `404.html` — GitHub Pages fallback page
@@ -25,16 +30,9 @@ This site supports a local community fundraiser and bottle drive at Sunset Shore
 - Added clear disclaimers that this is a community fundraiser, not a registered charity (unless status is confirmed).
 - Updated documentation files for launch readiness, privacy, transparency, and security.
 
-## Remaining placeholders
+## Preview status
 
-- `[Add exact bin directions here]`
-- `[Add contact email here]`
-- `[insert goal]`
-- `[insert amount]`
-- `[insert milestone]`
-- `[Organizer name or group]`
-- `[Optional phone placeholder]`
-- `[Social media placeholder]`
+This is a preview website for the Ninja Park community project. Official launch details such as exact bottle bin directions, contact information, and donation program details are intentionally withheld until confirmed by the project organizers.
 
 ## Preview locally
 
@@ -45,8 +43,8 @@ This site supports a local community fundraiser and bottle drive at Sunset Shore
 
 ## Publish with GitHub Pages
 
-1. Confirm all placeholders are updated.
-2. Change the robots meta tag in `index.html` from `noindex, nofollow` to `index, follow` when the campaign is ready to publish publicly.
+1. Confirm all project details are updated.
+4. Confirm the robots meta tag in `index.html` is changed from `noindex, nofollow` to `index, follow` only when the campaign is ready to publish publicly.
 3. Commit your changes and push to GitHub:
    - `git add .`
    - `git commit -m "Publish Ninja Park site with launch-ready content"`

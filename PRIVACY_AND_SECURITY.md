@@ -7,7 +7,7 @@ This website is built for transparency, privacy, and community trust. It does no
 - No analytics or visitor tracking is included.
 - No cookies are used for tracking or advertising.
 - No personal information is collected through forms or on-site donation processing.
-- Contact fields are placeholders until organizer details are verified.
+- Organizer contact details are held until verified by the project team.
 
 ## Donation handling
 

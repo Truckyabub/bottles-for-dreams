@@ -513,6 +513,20 @@ p {
   color: var(--muted);
 }
 
+.feature-list {
+  margin: 1rem 0 1rem;
+  padding-left: 1.3rem;
+}
+
+.feature-list ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.feature-list li {
+  margin-bottom: 0.5rem;
+}
+
 .timeline {
   position: relative;
   padding: 2rem 0 0;
