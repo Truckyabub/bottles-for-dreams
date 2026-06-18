@@ -1,0 +1,90 @@
+@page {
+  margin: 0.5in;
+}
+
+* {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  background-image: none !important;
+}
+
+html,
+body {
+  background: #fff !important;
+  color: #000 !important;
+  font-size: 11pt;
+  line-height: 1.45;
+}
+
+body::before,
+.site-header,
+.menu-toggle,
+.primary-nav,
+.hero-actions,
+.screen-only,
+.back-to-top,
+.gallery-modal,
+.hero-visual,
+.footer-nav,
+.skip-link,
+.verification-banner,
+.callout,
+.event-actions {
+  display: none !important;
+}
+
+.section {
+  width: 100% !important;
+  padding: 0 0 1rem !important;
+  margin: 0 !important;
+}
+
+#home,
+#about,
+#legacy,
+#sponsors,
+#giving-back,
+#memory,
+#gallery,
+#contact,
+.site-footer {
+  display: none !important;
+}
+
+#event {
+  display: block !important;
+  padding-top: 0 !important;
+  break-after: avoid;
+}
+
+#event .panel {
+  border: 1px solid #000 !important;
+  background: #fff !important;
+}
+
+#event .event-poster {
+  gap: 0.75rem;
+}
+
+#event h2,
+#event h3,
+#event p,
+#event dt,
+#event dd {
+  color: #000 !important;
+}
+
+#event .event-details div {
+  background: #fff !important;
+  border: 1px solid #000 !important;
+}
+
+#event .event-details dt {
+  font-weight: 700;
+}
+
+#event .event-note,
+#event .event-lead,
+#event .strong-note {
+  color: #000 !important;
+}
